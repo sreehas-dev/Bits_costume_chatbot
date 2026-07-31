@@ -1,0 +1,1234 @@
+[
+  {
+    "id": "FAQ_0047",
+    "category": "INSTRUCTION",
+    "question": "I am not able to complete the feedback survey due to medical issue. Can you please reopen the expired feedback survey now?",
+    "answer": "We would like to inform you that this query will be addressed by your respective programme coordinator. Kindly communicate with your coordinator; The deadline of Feedback Survey link is enabling with the permission of coordinator only. Once you provide the medical details and proofs to your programme coordinator and he/she finds the genuine reason of missing the survey then he will instruct the feedback survey team to reopen the same survey.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0169",
+    "category": "GRADUATION",
+    "question": "Please share the Graduation certification sample?",
+    "answer": "Dear Student, A sample graduation certificate is available on our website under the FAQs section: https://bits-pilani-wilp.ac.in/m-tech/cluster/data-science-and-engineering.php#faqs.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0171",
+    "category": "GRADUATION",
+    "question": "Can I download all my lectures from Semester 1 to Final Semester for my future reference?",
+    "answer": "Dear Student, Thank you for your query. Unfortunately, there is no option available for downloading lectures. Please note that, as per policy, access to the course modules will be revoked once the semester is complete.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0153",
+    "category": "PROJECTS / VIVA",
+    "question": "How can I update the details of my Supervisor and Additional Examiner after Abstract submission?",
+    "answer": "\u25cf Employing Organization \u25cf Degree Program \u25cf Research Area \u25cf Dissertation Title \u25cf Supervisor's Name \u25cf Supervisor's Email \u25cf Supervisor's Qualification \u25cf Supervisor's Designation & Address \u25cf Supervisor's Phone No. (with STD code) \u25cf Additional Examiner's Name \u25cf Additional Examiner's Email \u25cf Additional Examiner's Qualification \u25cf Additional Examiner's Designation & Address \u25cf Additional Examiner's Phone No. (with STD code)",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0125",
+    "category": "PROJECTS / VIVA",
+    "question": "If there is an RRA or E grade in any of the three semesters, can we clear it immediately or do we need to wait before starting the Dissertation/Project/Project Work?",
+    "answer": "You will need to pay the fees for an additional semester and re-register for the courses in which you have received an RRA or E grade. You must clear those courses and achieve an overall CGPA of 5.5 (for Master\u2019s students) or 4.5 (for First Degree students) in all semesters. Only after meeting these criteria will you be eligible to register for the Dissertation/Project/Project Work in the subsequent semester.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0159",
+    "category": "PROJECTS / VIVA",
+    "question": "What is the role of the Supervisor and Additional Examiner, and who selects them?",
+    "answer": "The Mentor can act as the Supervisor, who will guide the student and serve as one of the examiners. If the Mentor is not the Supervisor, they must serve as the Additional Examiner. \u25cf The Supervisor and Additional Examiner must be two different individuals, preferably from your current organization. The same person cannot act as both for the same student. \u25cf If you cannot provide them from your organization, either or both can be selected from another organization with prior approval. \u25cf Qualifications: o Supervisor: B.E./B.Tech./M.Sc./MBA/MCA with 5+ years of experience o Additional Examiner: Equivalent or higher qualification (e.g., M.E./M.Tech./M.S./MBA/Ph.D.) \u25cf Your subordinate cannot act as your Supervisor or Additional Examiner; they must be in a position to provide guidance. The student, in consultation with the Supervisor, identifies the Dissertation topic and prepares a detailed Dissertation Outline. Organizational members are expected to participate in reviews.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0115",
+    "category": "PROJECTS / VIVA",
+    "question": "Can we contact BITS professor as a supervisor?",
+    "answer": "No, a BITS Professor cannot be appointed as a Supervisor or Mentor for your Dissertation/Project/Project Work.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0068",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "Will cloak rooms be provided at the designated exam centres?",
+    "answer": "Yes. However, you are advised not to carry any valuables like jewelry, cash, gadgets etc.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0062",
+    "category": "EXAMINATION",
+    "question": "What if I am unable to appear for the Regular Exam(s)?",
+    "answer": "If a student is unable to appear for any of the Regular Mid-Semester Exams (EC2R) or Regular Comprehensive Examination (EC3R) due to genuine unforeseen or unavoidable personal or professional exigencies, he/she can apply online for the Mid-Semester Make-up / Comprehensive Make-up examinations, soon after the Regular Exams are over.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0157",
+    "category": "PROJECTS / VIVA",
+    "question": "Why is my final grade not visible to me?",
+    "answer": "The final grades will be made visible to students only after approval by the Examination Committee. Please wait until this process is completed.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0093",
+    "category": "PROJECTS / VIVA",
+    "question": "Do I have to choose supervisor/mentor of the same organization?",
+    "answer": "Yes, it is strongly recommended to choose a Supervisor/Mentor from your current organization, as they can guide you effectively throughout the project and are also required to sign the Dissertation-related documents.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0086",
+    "category": "EVALUATION",
+    "question": "When will the Revaluation window be open? and How will I know when the Revaluation window open?",
+    "answer": "You will receive official communication once the Re-evaluation window is open. To stay updated, please keep an eye on your official BITS Email for timely information regarding the Revaluation window.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0051",
+    "category": "INSTRUCTION",
+    "question": "Where can I find my course book detail?",
+    "answer": "Course Handout is available on e-learn portal course page for students after register in their respective course. Course handout Contain the Name of the text/ref. books. You can also check e-library for more books related to your course.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0085",
+    "category": "EVALUATION",
+    "question": "Hard Copy of Grade Sheets",
+    "answer": "Kindly note that hard copies of full transcripts and degree certificates are sent via post to those students who successfully complete their program. students can however download their semester grade sheets as PDFs from the e-learn portal.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0095",
+    "category": "PROJECTS / VIVA",
+    "question": "What is the eligibility to be a supervisor?",
+    "answer": "A Supervisor should possess one of the following qualifications: B.E., B.Tech., M.Sc., MBA, or MCA, along with a minimum of 5 years of relevant work experience.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0132",
+    "category": "PROJECTS / VIVA",
+    "question": "Can non-Indians be Supervisors?",
+    "answer": "Yes, non-Indians can serve as Supervisors if they are employed in the same organization as the student.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0001",
+    "category": "REGISTRATION FAQ",
+    "question": "Why have I not received Registration Communication mail?",
+    "answer": "Registration is opened only for continuing students (who have already taken exams for the previous semester). Newly admitted students are not required to register separately on the ERP. Their registration is completed during admission process only. If you were on a break in your previous semesters and want to continue from this semester, please drop a mail to Support cell support@wilp.bits-pilani.ac.in mentioning the reason of absence.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0161",
+    "category": "PROJECTS / VIVA",
+    "question": "What are the guidelines for Abstract, Mid-Semester, and Final VIVA presentations?",
+    "answer": "There is no fixed format for the presentation. \u25cf You can use the same PPT for Abstract, Mid-Semester, and Final VIVAs, updating content as your work progresses. \u25cf The presentation should be a summarized version of your project. Points to cover in each VIVA: \u25cf Abstract VIVA: o Introduction o Overview of the project \u25cf Mid-Semester VIVA: o Introduction o Literature Review o Research Methodology o Data Collection (or relevant progress based on your project) o Any updates based on faculty feedback \u25cf Final VIVA: o Introduction o Literature Review o Research Methodology o Data Collection o Calculations/Results o Conclusion o Demo of your work (if applicable) o Any updates based on faculty feedback",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0002",
+    "category": "REGISTRATION FAQ",
+    "question": "When / How can I register for the upcoming semester?",
+    "answer": "Registration for the WILP programmes happens twice in a year \u2013 (1) July session (for the First Semester of the Academic year) & (2) January session (for the Second Semester of the Academic year). Once the semester-registration is opened, the Registration Cell will send an official communication to your BITS Mailbox with the details of the registration process, fee payment and other important instructions. An announcement regarding the commencement of the Registration for the upcoming semester will also be posted on the eLearn portal homepage. You must complete the semester fee payment & registration on the ERP Portal before the deadline. Please click to refer to the WILP ERP Registration Manual for the detailed user manual which has the screenshots of the steps for completing the semester registration process on the ERP portal.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0168",
+    "category": "ADMISSION RELATED",
+    "question": "How do I change my Photograph uploaded in the Application centre?",
+    "answer": "Please email at mailadmin@wilp.bits-pilani.ac.in",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0139",
+    "category": "PROJECTS / VIVA",
+    "question": "What should I do if there is a delay in TURNITIN report generation?",
+    "answer": "TURNITIN reports may take 8\u201310 hours to generate, especially for large documents or during high server traffic. Please wait for some time and then refresh the page to check if the plagiarism percentage appears.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0028",
+    "category": "REGISTRATION FAQ",
+    "question": "How can I change my electives after registration?",
+    "answer": "Change of electives is not allowed after registration. Students may contact us during registration for substitution of courses without an exam date conflict. Write to us at support@wilp.bits-pilani.ac. with your request. The decision on accepting the elective change request will be taken by WILP Registration Cell after careful consideration of your request. The decision taken by the WILP Registration Cell is final in this matter.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0102",
+    "category": "PROJECTS / VIVA",
+    "question": "Can two students have same supervisor?",
+    "answer": "Yes, two or more students may have the same Supervisor, provided the projects are distinct and independent of each other. Note: Each student must have a separate project title, scope, and report, even if they are guided by the same Supervisor.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0071",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "What is the reporting time at the designated exam centres?",
+    "answer": "You must report at the exam centre 45 Minutes prior to the commencement of the exam.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0134",
+    "category": "PROJECTS / VIVA",
+    "question": "Are there 3 different stages of VIVAs, and should my Mentor and Additional Examiner attend all 3 sessions?",
+    "answer": "There are three stages of VIVAs: Abstract, Mid-Semester, and Final. The roles and participation requirements are as follows: 1. Abstract Viva o Students must upload their Abstract / Outline Report (PDF) on the VIVA portal before the deadline. o An online Abstract Viva, lasting 10\u201315 minutes, will be conducted. o Participation of the Organizational Supervisor and Additional Examiner is optional. 2. Mid-Semester Viva o Submit the Mid-Semester Report before the corresponding deadline. o An online Mid-Semester Viva, typically 15\u201320 minutes, will be conducted. o Presence of the Organizational Supervisor and/or Additional Examiner is optional. 3. Final Viva o Submit the Final Dissertation Report (PDF) to both Supervisor and Additional Examiner at least two weeks before the final deadline. o Supervisor and Additional Examiner conduct the Pre-Final Evaluation and jointly complete the Mentor Evaluation Form, recommending the Pre-Final Grade. o Students then appear for the Online Final Viva, which includes: \u25aa 20-minute technical PowerPoint presentation \u25aa 10-minute viva-voce \u25aa Mandatory software demonstration (if applicable) 4. Presence of the Organizational Supervisor and Additional Examiner is mandatory for the Final Viva. Note: Share the respective Viva dates and key deadlines with your Supervisor and Additional Examiner early, so they can plan their availability accordingly.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0163",
+    "category": "PROJECTS / VIVA",
+    "question": "Is the Capstone project a group project or an individual project?",
+    "answer": "Capstone projects are group projects only for HCL students subjected to BITS Policy.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0120",
+    "category": "PROJECTS / VIVA",
+    "question": "Can the Examiner sign an NDA if required by the organization?",
+    "answer": "No, Non-Disclosure Agreements (NDAs) will not be signed by BITS Evaluators or Faculty Examiners. Students are advised to ensure that their Dissertation/Project/Project Work does not include any confidential or proprietary information from their organization.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0141",
+    "category": "PROJECTS / VIVA",
+    "question": "What is the procedure to access TURNITIN?",
+    "answer": "Please refer to the following document for guidance: Turnitin Account Setup Guidelines - turnitin Plagiarism Tool Account Setup Guidelines.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0107",
+    "category": "PROJECTS / VIVA",
+    "question": "Can we work on our own project, which falls under a different domain?",
+    "answer": "Yes, you can, provided it is carried out under the guidance of your Supervisor/Mentor, aligns with your Programme and the courses you have studied, and you obtain a No Objection Certificate (NOC) from your organization. The NOC must be shared with support@wilp.bits-pilani.ac.in",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0066",
+    "category": "EXAMINATION",
+    "question": "What if I make an E grade / I have been awarded RRA in a course, what does it mean?",
+    "answer": "Students who have got an E Grade (or) RRA (Required to Register Again) in any of their semester courses are required to register again for the same course during a later semester after paying the full semester fee.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0070",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "What are the valid ID proofs that I can present to the proctor at the exam hall?",
+    "answer": "In addition to the exam hall ticket (printed or soft copy), you must also carry any government issued original ID card like Aadhaar, PAN, Driving License, Passport etc.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0041",
+    "category": "INSTRUCTION",
+    "question": "Where Can I find the Course Handout?",
+    "answer": "Course Handout is available on e-learn portal course page for students after register in their respective course.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0067",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "What are the key points of the examination process at designated exam centres?",
+    "answer": "a. Students will take the exams on the computer systems provided at the exam centres b. Student will take the exams through pre-installed Safe Exam Browser on the computer systems at the centres c. Answers can be submitted either through scan & upload using mobile or typing the answers in the textbox d. Mid Semester (EC2) exams will be closed book and no reference material will be permitted during the exams. e. Students will only be allowed only in Comprehensive Exam EC3 Open Book to carry hard-copies of notes and books during the examination period f. Students will have to carry sufficient A4 size blank sheets to write their answers during the exams g. The proctor(s) in the examinational hall will be the point of contact in case a student faces any issue during exams",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0111",
+    "category": "PROJECTS / VIVA",
+    "question": "Do the Supervisor and Additional Examiner need to attend scheduled meetings?",
+    "answer": "Their attendance is optional during the Abstract and Mid-Semester Viva; however, if they join these sessions, it can greatly help students. Attendance is mandatory during the Final Viva.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0127",
+    "category": "PROJECTS / VIVA",
+    "question": "At the end of the Dissertation/Project/Project Work, do the data and code need to be submitted to the Examiner?",
+    "answer": "Yes, it is mandatory to provide a demo of your project\u2014including the code and data\u2014during BITS evaluations. You may use relevant data from other sources or open-source data for the demo. However, if your code is confidential, you do not need to include it in the report.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0135",
+    "category": "PROJECTS / VIVA",
+    "question": "When will TURNITIN access be provided?",
+    "answer": "TURNITIN access will be activated one week before the start of the Mid-Semester Viva.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0020",
+    "category": "REGISTRATION FAQ",
+    "question": "I am trying to enroll for Dissertation / Project / Project Work, however, I am getting some error.",
+    "answer": "As per Institute\u2019s academic regulations, students need to fulfill the minimum academic requirements of the CGPA with passing grades in all prescribed courses before registering the final semester Dissertation / Project / Project Work. If the academic performance of the student falls below the minimum requirements, student will be required to re-register in some courses in a subsequent semester and clear them before registering for the Final Semester Dissertation / Project / Project Work.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0083",
+    "category": "EVALUATION",
+    "question": "Bonafide cum medium of instruction letter download steps",
+    "answer": "Greetings from BITS Pilani Work Integrated Learning Programmes (WILP) Division! We are pleased to inform you that you can now generate and download the Current Semester Bonafide cum Medium of Instruction Certificate from the ERP Portal. Please follow the below steps for generating and downloading the Current Semester Bonafide cum Medium of Instruction Certificate from the ERP Portal. Please find below the process steps for generating & downloading the Current Semester Bonafide cum Medium of Instruction Certificate from the ERP Portal (https://erp.bits-pilani.ac.in/): 1. Visit the ERP Portal (https://erp.bits-pilani.ac.in/). 2. Click on VISIT THE SITE under STUDENT SYSTEM. 3. Please use your BITS Email ID and Password to Login to the ERP portal. 4. In the Student Homepage, click on My Academics tile. 5. In the My Academics page, click on Academic Reports. 6. Under the Academic Structure Reports tab you will find Bonafide Certificate Link. 7. Click on Bonafide Certificate Link for downloading the Bonafide cum Medium of Instruction Certificate for the Current Semester. Please note that you can generate and download your Current Semester Bonafide cum Medium of Instruction Certificate from the ERP Portal. Please write to WILP Registration Cell mail id for getting your Bonafide Certificates for the previously completed semesters.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0040",
+    "category": "REGISTRATION FAQ",
+    "question": "I am not able to add courses even after successful payment.",
+    "answer": "You need to choose exam location after semester fee payment and before course selection on ERP, as without choosing the exam location, you will not be able to add courses on ERP.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0078",
+    "category": "EVALUATION",
+    "question": "View semester evaluation marks process",
+    "answer": "Dear Student, Please follow the steps below to view your semester evaluation marks on the eLearn portal: 1. Log in to the eLearn portal using your BITS ID. 2. Navigate to the Examination section. 3. Click on Result and select the semester for which you wish to view your evaluation marks.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0082",
+    "category": "EVALUATION",
+    "question": "Backlog course registration steps",
+    "answer": "Please note that you are required to secure a minimum D grade in a course to avoid a backlog. Additionally, you are required to secure a minimum 5.5 CGPA to be able to successfully clear the entire programme. If you secure an E grade in any course, it will be considered as a backlog and you will be required to re-register again for that particular course, this entails the payment of the full semester fee before progressing to the dissertation/project phase.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0005",
+    "category": "REGISTRATION FAQ",
+    "question": "The Electives I wish to register for are not listed in the Sheet.",
+    "answer": "Only the electives offered for the upcoming semester will be listed on the ERP portal.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0162",
+    "category": "PROJECTS / VIVA",
+    "question": "What are the links we need to follow during our Dissertation/Project/Project Work?",
+    "answer": "You have to follow following standard formats as per your program: For Dissertation (M.Tech Student) & Project work (B.Tech Student) please use following links: Important Format Links for General/Engineering Students:- \u25cf Link for Sample Project Abstract/Outline Report: Sample Abstract/Outline Report \u25cf Link for Sample Project Mid-Semester Report: Sample Mid-Semester Report \u25cf Guidelines for preparation of Project Final Report: Final Report Guidelines For Dissertation Project work (MBA Student) please use following links: Important Format Links for Management Students:- \u25cf Link for Sample Project Abstract/Outline Report: Download Sample Project Outline Report \u25cf Link for Sample Project Mid-Semester Report: Download Sample Project Mid Semester Report \u25cf Guidelines for the preparation of Project Final Report: Final Report Guidelines Common links to be used by all students: \u25cf Checklist of Items for Final Dissertation, Project, Project Work Report: Checklist \u25cf Mentor Evaluation Form: Mentor Evaluation Form \u25cf Guidelines for submitting Abstract, Mid-Semester, and Final in the portal: Submission Guidelines \u25cf Turnitin account setup guidelines:- turnitin Plagiarism Tool Account Setup Guidelines",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0058",
+    "category": "EXAMINATION",
+    "question": "When will the Revaluation window be open? and How will I know when the Revaluation window open?",
+    "answer": "Please be informed that you will receive official communication once the Re-evaluation window is open. Stay tuned to your official BITS Email for timely information regarding the Revaluation window.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0004",
+    "category": "REGISTRATION FAQ",
+    "question": "I have recently admitted in WILP. Where Can I register now?",
+    "answer": "Registration is opened only for the continuing students (who have already taken exams for the previous semester). Newly admitted students are not required to register separately on the ERP. Their registration is completed during admission process only. Newly Admitted students can refer to their Admission Offer letter to check the four-courses in which they have already registered for their First Semester.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0103",
+    "category": "PROJECTS / VIVA",
+    "question": "Who is responsible for guiding the student \u2014 the Supervisor or the BITS Examiner?",
+    "answer": "The Supervisor/Mentor, chosen by the student from their organization, is responsible for guiding and supporting the student throughout the project work. The BITS Evaluator (Examiner) does not guide the student but is responsible for evaluating and grading the project during the Abstract Viva, Mid-Semester Viva, and Final Viva stages.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0165",
+    "category": "ADMISSION RELATED",
+    "question": "Can I request to change my enrolled Programme after completing admission?",
+    "answer": "You applied for and got admitted to a program of your choice. We do not have a provision for switching or migrating to another program. Additionally, please note that the program fee cannot be carried forward or transferred to any other program. Should you wish to pursue a different program, we kindly ask that you discontinue from the current program and submit a fresh application for the desired one.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0039",
+    "category": "REGISTRATION FAQ",
+    "question": "Can I drop after registration?",
+    "answer": "Once you have confirmed your registration and paid the applicable semester fee, your registration stands confirmed to the semester. You will not be able to drop / skip the semester midway. In case you decide later to leave the semester midway, then the semester fee paid will not be refunded nor carried forward to another semester. Dropping the semester after making the semester fee payment is termed as \u201cWithdrawal\u201d.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0137",
+    "category": "PROJECTS / VIVA",
+    "question": "How many pages are required for the Mid-Semester report?",
+    "answer": "There is no fixed page limit for the Mid-Semester report. A sample report will be shared via email which you can use as a reference. The focus should be on quality and clarity of content rather than the number of pages, ensuring that your faculty can effectively evaluate your work.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0021",
+    "category": "REGISTRATION FAQ",
+    "question": "I am getting conflict / clash error while validating.",
+    "answer": "ERP portal will not allow you to register with the courses which have exam clash. Try to register with another set of courses.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0050",
+    "category": "INSTRUCTION",
+    "question": "I forgot to complete the Quiz & Assignment. Can you please re-enable it?",
+    "answer": "We would like to inform you that this query will be addressed by your respective course faculty. Kindly communicate with your course faculty; The EC-1[Quiz/Assignment/Lab] component evaluation, submission and deadline link is enabling with the permission of respective course faculty. Once you provide the details and proofs to your faculty and he/she finds the genuine reason of missing the EC-1[Quiz/Assignment/Lab] then they will tack call accordingly for re-enable the EC-1.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0118",
+    "category": "PROJECTS / VIVA",
+    "question": "Is the credit of Dissertation/Project/Project Work counted in the final CGPA?",
+    "answer": "No, the credits for Dissertation/Project/Project Work are not counted in the final CGPA. Non-letter grades \u2014 EXCELLENT, GOOD, FAIR, POOR, and RRA (Required to Register Again) \u2014 are awarded for this component. Hence, it does not affect the CGPA obtained.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0154",
+    "category": "PROJECTS / VIVA",
+    "question": "If two reports are generated from TURNITIN, which one should be uploaded in the VIVA portal?",
+    "answer": "You should upload the plagiarism report that shows the percentage in the VIVA portal. This report will be considered for evaluation, so ensure it reflects the plagiarism percentage.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0057",
+    "category": "EXAMINATION",
+    "question": "Wants to take makeup exam for improvement",
+    "answer": "Please note that if you have already attended the Regular exam for a particular course, you are not eligible to retake the same course in the Makeup slots. It's important to understand that Makeup exams are not meant for improvement; they are simply an alternative option for students who were unable to attend the Regular exam for valid reasons. You have the choice to take exams either during the Regular schedule or in Makeup slots, but you cannot use the Makeup slot to attempt the same course again if you have already taken it during the Regular exam.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0056",
+    "category": "EXAMINATION",
+    "question": "Missed regular Exams",
+    "answer": "Please note that in case you have missed attending the Regular exam(s), you may attend the same in the Make-up exam slot(s) once the Make-up hall tickets are available for downloading soon after the Regular exams are over.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0142",
+    "category": "PROJECTS / VIVA",
+    "question": "What should I do if my TURNITIN account gets deleted by mistake?",
+    "answer": "Please contact support at support@wilp.bits-pilani.ac.in for assistance.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0130",
+    "category": "PROJECTS / VIVA",
+    "question": "We submitted HR consent already at the time of admission, do we require again?",
+    "answer": "Re-submission is not required if the supervisor is from the same organization. However, if the proposed mentor is from a different organization than the candidate\u2019s employer, a supporting document justifying this must be provided by the candidate\u2019s employer.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0133",
+    "category": "PROJECTS / VIVA",
+    "question": "IP/Copyright issue",
+    "answer": "BITS Pilani does not issue certificates regarding the intellectual property rights or copyright of student theses, research, or projects. \u25cf If your organization restricts the use of proprietary IP, consider working with open-source data or projects that do not involve confidential information. \u25cf For BITS evaluation, a demo of your project\u2014including code and data\u2014is mandatory. You may use relevant or open-source data for this purpose. \u25cf If your code is confidential, it does not need to be included in the report. \u25cf For projects on open-source work outside your organization, obtain a No Objection Certificate (NOC) in any suitable format from your employer and share it with support@wilp.bits-pilani.ac.in.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0140",
+    "category": "PROJECTS / VIVA",
+    "question": "What happens if TURNITIN is blocked for 24 hours?",
+    "answer": "After three submission attempts, TURNITIN will block further report generation for 24 hours. Please wait for 24 hours before trying again; the report can be generated after this period.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0008",
+    "category": "REGISTRATION FAQ",
+    "question": "I forgot my BITS Mail ID (20xxxxxxxxx@wilp.bits-pilani.ac.in) Login Password.",
+    "answer": "Write to mailadmin@wilp.bits-pilani.ac.in for re-setting your BITS Mail ID password.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0136",
+    "category": "PROJECTS / VIVA",
+    "question": "Until what date will TURNITIN access continue to work?",
+    "answer": "TURNITIN access will be available until the completion of the Final Viva.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0167",
+    "category": "ADMISSION RELATED",
+    "question": "I forgot my BITS Gmail account Password? How do I reset gmail passwords?",
+    "answer": "Please email at mailadmin@wilp.bits-pilani.ac.in for Password reset related support.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0018",
+    "category": "REGISTRATION FAQ",
+    "question": "I am a Company Sponsored student, but the system is asking me to make the fee payment.",
+    "answer": "We have not received your name from Company under Company Sponsored Students List. Reach out to your Company In Charge / WILP Business Development Team for addressing this issue.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0146",
+    "category": "PROJECTS / VIVA",
+    "question": "Can I change my project title during the Mid-Semester stage?",
+    "answer": "It is not advisable to change the project title at this stage. If you wish to proceed, discuss with your faculty mentor. Only with mentor approval can the title be updated. Share the approval email with support@wilp.bits-pilani.ac.in to update it in the portal.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0079",
+    "category": "EVALUATION",
+    "question": "Soft Copies Grade Sheets / Marks Sheets",
+    "answer": "Dear Student, Please follow the steps below to download your grade sheet or view your semester evaluation marks: 1. Log in to the E-Learn Portal. 2. Navigate to the Examination Panel. 3. Click on Results and select the desired option.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0116",
+    "category": "PROJECTS / VIVA",
+    "question": "Can we use data sources available on community forums since our organization has a strict data-sharing policy?",
+    "answer": "Yes, you may use data available on community forums or other public sources. However, you should not copy the content directly. The data and related content must be appropriately rewritten or adapted to suit your Dissertation/Project/Project Work, ensuring that it does not get flagged under plagiarism during the similarity check.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0054",
+    "category": "EXAMINATION",
+    "question": "Exam hall ticket link not yet live",
+    "answer": "Kindly note that you will get official communication from our end once the link gets activated,",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0034",
+    "category": "REGISTRATION FAQ",
+    "question": "What is minimum CGPA required for final semester registration?",
+    "answer": "Please note that for the First degree (B. Tech, B.Sc. and M.Sc.) programmes require a minimum CGPA of 4.50 and a Higher degree (M. Tech and MBA) programmes require a minimum CGPA of 5.50 without any E Grade in any of the courses to register for Final Semester Dissertation / Project / Project Work.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0110",
+    "category": "PROJECTS / VIVA",
+    "question": "Usually company data and problem statement stay confidential, and the company may not allow it to be shared. What to do in such cases?",
+    "answer": "If your organization has restrictions on using proprietary data or intellectual property, you may consider the following options: 1. Use Open-Source Data: Work with publicly available datasets relevant to your dissertation topic. You can explore open data repositories, government databases, or research institutions. 2. Simulation: If real data is not accessible, you may simulate data that closely resembles the type of data you would have used. 3. Project Scope Adjustment: Refine your project scope to align with the data you can access. Adjust research questions or objectives accordingly. Important: For BITS evaluations, a demo of your project\u2014including code and data\u2014is mandatory. If your code is confidential, you do not need to include it in the report. If you choose to work on an open-source project outside your organization, you must obtain a No Objection Certificate (NOC) from your employer and share it with support@wilp.bits-pilani.ac.in. This ensures compliance with both your organization\u2019s policies and BITS requirements.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0069",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "Am I required to bring my Laptop to the designated exam centres?",
+    "answer": "No. The IT infrastructure required to take the exams will be provided at the exam centres.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0037",
+    "category": "REGISTRATION FAQ",
+    "question": "I do not wish to register for this semester. How can I drop or break in a semester?",
+    "answer": "You can request to drop/skip the semester at the time of registration after submitting valid reasons. If you do not intend to register for the upcoming semester and take a break / drop, then send us a mail at support@wilp.bits-pilani.ac. with the subject : DROP (Take a break) in the upcoming semester.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0032",
+    "category": "REGISTRATION FAQ",
+    "question": "Can I register for next semester four courses with backlog course?",
+    "answer": "Student cannot register for more than four courses in one semester. The duration of your programme shall be extended by one semester even with a single backlog course and you will be required to pay the full semester fee for that semester registration.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0007",
+    "category": "REGISTRATION FAQ",
+    "question": "I am not able to login my ERP Account or I am getting 403 error.",
+    "answer": "Kindly clear your cache and cookies and try to access ERP Portal on Microsoft Edge or Google Chrome.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0094",
+    "category": "PROJECTS / VIVA",
+    "question": "Could the Supervisor and Mentor be the same person?",
+    "answer": "Yes, the Supervisor and Mentor can be the same person, provided that individual has the necessary domain knowledge and experience to guide the project effectively.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0009",
+    "category": "REGISTRATION FAQ",
+    "question": "Tell me more about the Semester Fee Payment mode and procedure.",
+    "answer": "There are two options for competing your Fee payment: Option-1: One Time full Fee payment can be done directly on ERP through Net banking / UPI / Wallets / Debit Card / Credit Card based 03-months zero-cost EMI options. Click here to refer to the WILP ERP Registration Manual for the detailed user manual containing screenshots of the steps for completing the semester registration process on the ERP portal. PS : Kindly do not make full payment via Tech Process option. Option-2: EMI Option through Propelled can be done directly on the ERP through Propelled Link. Click to refer to the Propelled EMI option.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0045",
+    "category": "INSTRUCTION",
+    "question": "Where Can I find the Quiz and Assignment?",
+    "answer": "Please check your e-learn portal respective course page for the EC-1 (Quiz/Assignment).",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0053",
+    "category": "EXAMINATION",
+    "question": "What is Clash Student Template? How to resolve this issue?",
+    "answer": "Kindly note that in case there is a clash between two courses, i.e. exams for two of your courses are happening on the same date at the same time, then you are advised to take one of those exams in the Makeup slot. Please note that the hall tickets for Make-up exams will be made available for download only after the completion of Regular exams. As of now, you can download the hall tickets for the exams that you are planning to take in the Regular slot.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0114",
+    "category": "PROJECTS / VIVA",
+    "question": "Can we choose those projects which are done by our senior and we will enhance that project?",
+    "answer": "No, enhancement or extension of an existing project cannot be considered as Dissertation/Project/Project Work. The work must be original and carried out by the student during the registered semester.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0035",
+    "category": "REGISTRATION FAQ",
+    "question": "My previous semester CGPA is less than required. Can I register for next semester?",
+    "answer": "You will be able to register for the subsequent semesters (except for Dissertation / Project Semester) and you can improve your CGPA in the coming semesters to ensure that you are meeting the minimum academic requirements of your programme.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0113",
+    "category": "PROJECTS / VIVA",
+    "question": "Can the Supervisor be a Professor from another university?",
+    "answer": "Only as an exception. If a suitable Mentor/Supervisor is not available within the same organization, the student may approach a senior person from another organization or university who meets the required qualifications. In such cases, the student\u2019s employer must provide a supporting document justifying the need for selecting a Supervisor/Mentor from outside the organization.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0151",
+    "category": "PROJECTS / VIVA",
+    "question": "What is the Mentor Evaluation Form and its guidelines?",
+    "answer": "Before submitting your final report and PPT in the VIVA portal, you must present your work to your supervisor and additional examiner. \u25cf They will complete and sign the Mentor Evaluation Form based on your presentation. \u25cf The scanned PDF of this form must be uploaded in the VIVA portal along with: o Final Report (PDF) o PPT (PPT format) o Plagiarism Similarity Report (PDF) \u25cf Upload all documents before the Final Report submission deadline.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0006",
+    "category": "REGISTRATION FAQ",
+    "question": "Where can I get the list of elective courses for the coming semester?",
+    "answer": "The list of Electives for the courses is available on elearn portal. Once you have paid the semester fee successfully, the options for choosing the electives will be visible on ERP system and student may choose the desired combination of electives as per academic requirements during registration on ERP. You can also download the Performance sheet for your programme which is now available on the ERP portal. Track your academic progress in your programme using the Performance Sheet and also plan your Registration for the next semester accordingly. Keep a track of your completed and pending core courses as well as elective courses in the programme and only choose the remaining courses as per your academic requirements while registering for the next semester.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0124",
+    "category": "PROJECTS / VIVA",
+    "question": "Can the Examiner provide confirmation to the HR regarding data protection, similar to HR approval?",
+    "answer": "No, evaluations by the BITS Examiner are purely academic in nature. The Examiner will not send any confirmation or communication to the organization\u2019s HR regarding data protection. If there are concerns related to confidentiality, you are advised to use open-source data for your Dissertation/Project/Project Work.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0097",
+    "category": "PROJECTS / VIVA",
+    "question": "If I have changed organization, is it required to provide consent from the new organization?",
+    "answer": "Yes. If you have changed your organization during the Programme, you are required to obtain consent from your new organization before proceeding with the Dissertation. Please refer to the Name, Employer and Mentor Change Process Manual available on the SDMS Portal: https://sdms.bits-pilani.ac.in/ for detailed instructions and approval procedures. Note: It is strongly recommended not to change organizations during the Dissertation semester, as it may affect project continuity and approval timelines.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0080",
+    "category": "EVALUATION",
+    "question": "RRA grade",
+    "answer": "Please note that it is mandatory for the students to attend either in Regular or Makeup Exam for all registered courses in the particular semester. Students who miss the Regular or Makeup Exam for any courses during the current semester will be declared RRA (Required to Register Again) Grade for that course and they have to register for the same course during a later semester. It is crucial to note that no further Makeup Exams will be arranged, regardless of the reasons for missing the Regular and Makeup Exams.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0117",
+    "category": "PROJECTS / VIVA",
+    "question": "Is a semester break allowed before the Dissertation/Project/Project Work?",
+    "answer": "Yes, a semester break is allowed. However, when you wish to resume, you must register again for the Dissertation/Project/Project Work semester by paying the applicable semester fees.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0131",
+    "category": "PROJECTS / VIVA",
+    "question": "What is the marks ratio for the mid-semester and final report?",
+    "answer": "The marks distribution is as follows: Abstract \u2013 10%, Mid-Semester Report \u2013 30%, and Final Report with Viva \u2013 60%.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0106",
+    "category": "PROJECTS / VIVA",
+    "question": "Do we have any sample of problem statement? what all needs to be cover while giving proposal?",
+    "answer": "Dissertation guidelines, including the templates for the outline, mid-semester, and final project, will be shared with students. However, no sample of any previous project will be provided for reference.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0128",
+    "category": "PROJECTS / VIVA",
+    "question": "What are the credit points for the Dissertation/Project/Project Work?",
+    "answer": "The credit points for the Dissertation/Project/Project Work will be shared during your Programme-specific Dissertation Orientation.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0017",
+    "category": "REGISTRATION FAQ",
+    "question": "Where can I get the Semester Fee Receipt?",
+    "answer": "The fee receipt will be available online for download from the eLearn portal three-weeks after the commencement of your classes",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0010",
+    "category": "REGISTRATION FAQ",
+    "question": "I am getting the error message as \u201cHold on Record\u201d on ERP while validating the courses on ERP.",
+    "answer": "The first step in the semester registration process is \u2018Fee Payment\u2019. If you have not paid the semester fee yet or your payment is not successful yet then you will get error message - \u2018Hold on Record\u2019 on the ERP Portal while validating the courses. If you have already made the fee payment then login after a couple of hours to complete the next steps in the registration process. If you face this issue even after a few hours, please write to support@wilp.bits-pilani.ac.in with your concerns.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0030",
+    "category": "REGISTRATION FAQ",
+    "question": "When will my registered courses be listed on eLearn portal?",
+    "answer": "Registered courses will be updated on the eLearn portal & MS Teams before the Semester Class commencement.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0029",
+    "category": "REGISTRATION FAQ",
+    "question": "Where I can get the course handouts before selecting the electives for coming semester registration?",
+    "answer": "You will be able to see the Course Handouts for the registered courses only after the completion of semester registration process. You can refer to the Course Description mentioned on eLearn Portal.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0150",
+    "category": "PROJECTS / VIVA",
+    "question": "When will the VIVA be scheduled?",
+    "answer": "The VIVA will be scheduled one day prior to the VIVA date. You can check your Teams calendar 24 hours before the session. Share the Teams link with your mentor and additional examiner; they can click the link to attend the VIVA.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0011",
+    "category": "REGISTRATION FAQ",
+    "question": "I have made the payment but not able to add courses on ERP.",
+    "answer": "Fee payment can take 04 to 24 hours to reflect in your account on the ERP portal. You should re-login with your BITS Mail ID & Password in the ERP portal three to four hours after the fee payment to complete the registration process for your next semester courses. In case you are opting for making the Registration Fee payment using easy EMI Option through our FinTech partner, please visit the EMI link mentioned in the Registration commencement mail sent by the Registration Cell. The successful setup of EMI on the system may take 72 working hours. Once your EMI gets disbursed / approved successfully, you can proceed with your course selection on ERP.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0091",
+    "category": "PROJECTS / VIVA",
+    "question": "Is there an approval process before starting work on the Dissertation/Project/Project Work?",
+    "answer": "Yes. Before beginning work on the Dissertation/Project/Project Work, students must upload the project outline and abstract on the Viva Portal. The submission will be evaluated by a BITS Evaluator. If the proposed topic or outline is not approved, the student will be required to select a different topic and resubmit for approval.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0119",
+    "category": "PROJECTS / VIVA",
+    "question": "By when does the Abstract need to be submitted?",
+    "answer": "The submission timelines for the Abstract/Outline will be communicated by BITS as per the academic schedule.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0059",
+    "category": "EXAMINATION",
+    "question": "Will there be any extension to Revaluation Window?",
+    "answer": "After the closure of the re-evaluation window, no extensions will be possible. If you have additional queries, kindly send an email to evm@wilp.bits-pilani.ac.in",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0048",
+    "category": "INSTRUCTION",
+    "question": "Where Can I find the Mid-Semester & Comprehensive Exam dates?",
+    "answer": "To know about the all courses exam date detail first you need to login your e-learn portal and kindly check under \"Important Links\", the course list of current semester with the exam slot details are available there.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0158",
+    "category": "PROJECTS / VIVA",
+    "question": "I am not currently working but want to continue with Dissertation/Project/Project Work. Can I register?",
+    "answer": "Since this is a WILP program, you must be a working professional to be eligible to register for the semester. Once you secure a job, you can register. For further queries, please email support@wilp.bits-pilani.ac.in.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0060",
+    "category": "EXAMINATION",
+    "question": "How many Evaluation Components I have to take in a single semester?",
+    "answer": "It is the responsibility of each registered student to take the prescribed components of the evaluation such as Quizzes & Assignments (EC1), Mid-Semester (EC2) Examinations and Comprehensive (EC3) Examinations according to the schedule given in the respective Course Handouts. The students registered in Dissertation or Project Work Semester will not have EC1, EC2 & EC3 components.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0027",
+    "category": "REGISTRATION FAQ",
+    "question": "How do I know my latest/current CGPA?",
+    "answer": "You can download the soft copy of your grade sheet from the elearn portal. You can also check the course history and grades on the ERP portal after login. Please watch a short video on viewing your previous semester marks on eLearn - https://youtu.be/wiNkGpVoeA8 Please watch a short video on downloading your earlier semester mark sheets - https://youtu.be/OxfC_S3TZGA",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0024",
+    "category": "REGISTRATION FAQ",
+    "question": "I have added and validated my courses on ERP, however, I haven\u2019t received any confirmation regarding my registration.",
+    "answer": "You can login into the ERP Portal and check the courses registered for the upcoming semester.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0075",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "Should I submit my written answer-scripts at the exam centre?",
+    "answer": "Students are required to first scan & upload handwritten answer scripts and then submit their answer scripts to the proctor before leaving the exam centre.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0155",
+    "category": "PROJECTS / VIVA",
+    "question": "Does the University own the intellectual property rights of my thesis, research, or publications?",
+    "answer": "The University does not own the intellectual property rights of your thesis, research, or publications. Your submission will remain with BITS and be accessible to the BITS fraternity, so you may choose to omit any confidential information in your submitted thesis.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0164",
+    "category": "PROJECTS / VIVA",
+    "question": "Are there any eligibility criteria for Dissertation / Project / Project Work?",
+    "answer": "For MBA Students: As per the Academic Policy, to be eligible for registration in the final Project semester, you must have no backlog courses and must maintain a minimum CGPA of 5.50. For M.Tech Students: As per the Academic Policy, to be eligible for registration in the final Dissertation semester, you must have no backlog courses and must maintain a minimum CGPA of 5.50. For B.Tech Students: As per the Academic Policy, to be eligible for registration in the final Project Work semester, you must have no backlog courses and must maintain a minimum CGPA of 4.50.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0013",
+    "category": "REGISTRATION FAQ",
+    "question": "The payment got deducted twice from my Account.",
+    "answer": "In case the fee payment has been deducted twice from your account, the duplicate payment made shall be tracked and credited back to your account within the next 2-3 weeks\u2019 time. Write to accounts@wilp.bits-pilani.ac.in",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0138",
+    "category": "PROJECTS / VIVA",
+    "question": "In which format should we create the Abstract, Mid-Semester, and Final reports?",
+    "answer": "All reports must be submitted in PDF format. The file name should be your 11-digit BITS ID. Please ensure that the content uses text (words) and not images for the main text.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0025",
+    "category": "REGISTRATION FAQ",
+    "question": "I have registered for my courses on ERP Portal, however, they have not been updated on eLearn Taxila LMS / MS Teams.",
+    "answer": "Updating of Semester Courses on eLearn Taxila LMS & MS Teams will be completed only after the completion of Semester Registration Deadline and your registered courses will be visible on these portals before the Semester Class commencement date. However, If you are not be able to view your courses on eLearn Taxila LMS & MS Teams before the Semester Class start date, kindly drop a mail at support@wilp.bits-pilani.ac.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0043",
+    "category": "INSTRUCTION",
+    "question": "Where Can I find the Old Question Paper?",
+    "answer": "Old Question Papers are available on e-learn portal course page for students after registering in their respective course.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0147",
+    "category": "PROJECTS / VIVA",
+    "question": "I am not able to resubmit my report. What should I do?",
+    "answer": "You can resubmit your report once your faculty mentor enables resubmission. Please email your professor requesting this. If still issue is not resolved please write to support@wilp.bits-pilani.ac.in.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0055",
+    "category": "EXAMINATION",
+    "question": "Exam time and slots are fixed",
+    "answer": "Please note that exam schedules for all courses are fixed before the start of the semester and exams are scheduled in such a way that there are no clashes in the exams for the semester courses registered by the students of various Programmes. We regret to inform you that we will not be able to change the exam schedule for any of the current semester courses. Please note that you need to attend the exams as per the Indian standard timings(IST).",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0042",
+    "category": "INSTRUCTION",
+    "question": "I want to check the course detail before the registration, where can I check?",
+    "answer": "To know about the course detail first you need to login your e-learn portal and download the BITS Bulletin under the Important Links. In bulletin PART VII \"COURSE DESCRIPTIONS (Off-Campus)\" is available.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0003",
+    "category": "REGISTRATION FAQ",
+    "question": "I am in my 3rd semester, however, the registration commencement mail is for 1st Semester 2025-2026",
+    "answer": "One Academic Year has two Semesters \u2013 the first semester (July to December) and the second semester (January to June). Your individual semester could be different from the Academic Year semester for which Registration has been opened.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0026",
+    "category": "REGISTRATION FAQ",
+    "question": "How can I know my completed/pending courses?",
+    "answer": "You may check your Academic requirements on ERP system and register accordingly for the pending courses. You can also download the Performance sheet for your programme on the ERP system. Track your academic progress in your programme using the Performance Sheet and also plan your Registration for the next semester accordingly.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0148",
+    "category": "PROJECTS / VIVA",
+    "question": "What is required for Mid-Semester submission, and where can I get the Plagiarism Similarity report?",
+    "answer": "Submit the Mid-Semester report and Plagiarism report separately in the VIVA portal. Once the digital certificate is generated, return to the course page and click on the similarity percentage to download the similarity report and digital receipt. Upload the similarity receipt in the VIVA portal under the Plagiarism Report section.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0061",
+    "category": "EXAMINATION",
+    "question": "Is it mandatory to attend Mid semester (EC2) exams?",
+    "answer": "For all courses registered in the current semester, the student must mandatorily attend the Mid-Semester (EC2) Examinations as well as the Comprehensive (EC3) Examination.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0126",
+    "category": "PROJECTS / VIVA",
+    "question": "What is the process to change the Supervisor/Mentor?",
+    "answer": "To change your Supervisor or Mentor for the Dissertation/Project/Project Work, please follow the process outlined below: 1. Refer to the Name, Employer, and Mentor Change Process Manual available at: https://elearn.bits-pilani.ac.in/user/ 2. Raise a request on the SDMS Portal along with the required supporting documents: https://sdms.bits-pilani.ac.in/ 3. Download the relevant form from: http://discovery.bits-pilani.ac.in/WILP/online/guidelines/guidelines.html 4. Fill in the details and send the scanned copy of the completed form along with all required enclosures to support@wilp.bits-pilani.ac.in. Guidelines for selecting a Mentor are available at: http://discovery.bits-pilani.ac.in/wilp/eduprocess/eduprocess.html. Please read the guidelines carefully and select a Mentor from your employing organization. All formalities should be completed within 15 days. Once the documents are received and verified, your records will be updated in the BITS database.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0076",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "Can I leave the exam centre early if I submit my exam before the scheduled end time of the exam?",
+    "answer": "Students will not be allowed to leave the exam centre before the scheduled end time of the exam.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0014",
+    "category": "REGISTRATION FAQ",
+    "question": "Payment is getting rejected.",
+    "answer": "Payment may be rejected due to incorrect Bank Account / Card details / Net Banking login credentials. Check the information you have provided and try again. If the problem persists, contact the Card issuing bank.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0087",
+    "category": "EVALUATION",
+    "question": "Will there be any extension to Revaluation Window?",
+    "answer": "After the closure of the re-evaluation window, no extensions will be possible. If you have additional queries, kindly write an email to support@wilp.bits-pilani.ac.in.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0038",
+    "category": "REGISTRATION FAQ",
+    "question": "Do I have to pay any additional fee on Semester Drop?",
+    "answer": "In case you have chosen to drop a semester during the registration process you need not pay the semester fee. However, in case you have registered for a semester by paying the fee and then you choose to withdraw midway then the semester fee paid will not be refunded. The fee paid will also be not carried forward to a subsequent semester. You will have to register again for the same semester when you return to complete your programme and will have to make the complete semester fee payment again. If you have paid your fee using EMI and dropped a semester midway, you are required to make the remaining EMI payments to the FinTech Partner and close the loan as per the set EMI repayment schedule.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0074",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "Are soft copies of notes or e-books allowed during the exams at the designated exam centres?",
+    "answer": "Mid Semester (EC2) exams will be closed book and no reference material will be permitted during the exams. Comprehensive (EC3) exams will be open book and students can only use hard copies of notes and books. Soft copies or e-books will not be allowed.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0172",
+    "category": "GRADUATION",
+    "question": "Will I get placement assistance after completing Graduating my Degree?",
+    "answer": "Dear Student, Thank you for your query. We would like to inform you that the WILP program is designed specifically for working professionals, and therefore, placement services are not provided.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0105",
+    "category": "PROJECTS / VIVA",
+    "question": "Can we select Examiner?",
+    "answer": "No, the Examiner (BITS Faculty evaluator) will be assigned by BITS for each student.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0088",
+    "category": "PROJECTS / VIVA",
+    "question": "Who will provide the list of topics to be chosen for the Dissertation/Project/Project Work?",
+    "answer": "The Dissertation/Project/Project Work topic is to be identified and selected by the student in consultation with their organization supervisor. BITS does not provide a predefined list of topics. The chosen project must be relevant to the student\u2019s programme and aligned with the domain of courses studied.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0123",
+    "category": "PROJECTS / VIVA",
+    "question": "Can data be masked?",
+    "answer": "No, data masking is generally not permitted. However, if there is any conflict due to a confidentiality agreement with your organization, you may discuss your specific case with the BITS Examiner during the Abstract & Midsem Report Review and follow the directions provided.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0098",
+    "category": "PROJECTS / VIVA",
+    "question": "Can we do projects on data outside organization?",
+    "answer": "Yes, you may undertake a project based on data from outside your organization, provided that: \u25cf The project is relevant to your programme domain, and \u25cf The project work is demonstrable, showing clear application and outcomes. Note: Students must ensure that the use of external data complies with their organization\u2019s data sharing and confidentiality policies.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0064",
+    "category": "EXAMINATION",
+    "question": "I have missed my Mid Semester & Comprehensive exams. Can I take the exams in the next semester?",
+    "answer": "If a student is absent for both the Regular Mid-Semester / Comprehensive Exam(s) as well as the Make-up Mid Semester / Comprehensive Exam(s) of a course, then he / she will be Required to Register Again (RRA) in those courses in a subsequent semester and appear for all evaluation components again in that semester, to clear the course with a valid grade. The marks obtained in any evaluation component in a semester cannot be carried forward to a subsequent semester.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0143",
+    "category": "PROJECTS / VIVA",
+    "question": "How can I download the plagiarism report?",
+    "answer": "After submitting your document on TURNITIN, the plagiarism percentage will be displayed. \u25cf Click on the percentage to open a new tab with detailed results. \u25cf From this tab, you can download the similarity report. \u25cf Upload the similarity report under the plagiarism submission section and mention the plagiarism percentage in the VIVA portal. \u25cf Only after this step will you be able to upload and submit the Mid-Semester report in the VIVA portal.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0096",
+    "category": "PROJECTS / VIVA",
+    "question": "Can supervisor/mentor be someone outside our organization?",
+    "answer": "The Supervisor should not be a subordinate of the student and must hold a position that enables them to provide effective guidance and oversight for the project. Only as an exception. If a suitable Supervisor/Mentor is not available within the organization, the student may approach a senior professional from another organization who meets the required qualification and experience criteria. In such cases, the student must obtain a No Objection cum Justification Letter from their current organization\u2019s HR, stating that: \u25cf No suitable Supervisor/Mentor is available internally. \u25cf The organization has no objection to the student undertaking the project and working with a Supervisor and/or Additional Examiner from outside the organization. \u25cf The proposed project is related to the student\u2019s current programme domain. There is no fixed format for this letter. It should be printed on company letterhead or plain paper, signed by HR, and sent to support@wilp.bits-pilani.ac.in",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0015",
+    "category": "REGISTRATION FAQ",
+    "question": "I have applied for EMI LOAN OPTION and have queries related to Loan.",
+    "answer": "Reach out to the concerned Mail ID / Contact No. of the FinTech Partner / EMI Loan Service provider mentioned in respective Loan Service Provider EMI Manual. (Refer to the registration email shared by WILP Registration Cell)",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0031",
+    "category": "REGISTRATION FAQ",
+    "question": "How do I register for my previous semester backlog course(s)?",
+    "answer": "Students are allowed to register for a maximum of four courses in one semester. If you have any pending backlog courses, the duration of your programme shall be extended by one semester even with a single backlog course and you will be required to pay the full semester fee for that semester registration.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0099",
+    "category": "PROJECTS / VIVA",
+    "question": "My company is small scale. There is no supervisor available in my firm. Is there any alternative?",
+    "answer": "Yes, only as an exception. If a suitable Supervisor or Mentor is not available within your organization, you may approach a senior professional from another organization who meets the required qualifications and experience criteria. In such cases, you must obtain a No Objection Certificate (NOC) cum Justification Letter from your current organization\u2019s HR. The letter should clearly state that: \u25cf There is no suitable Supervisor/Mentor available within the organization. \u25cf The organization has no objection to you taking guidance from a Supervisor/Mentor from outside the organization. \u25cf The project you are undertaking is related to your current programme domain. NOC Submission Process: 1. Prepare the NOC cum Justification Letter on company letterhead or plain paper signed by HR. 2. Ensure it includes the above points. 3. Send a scanned copy to support@wilp.bits-pilani.ac.in for record and approval.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0084",
+    "category": "EVALUATION",
+    "question": "The degree & course name is not mentioned on the degree certificate!",
+    "answer": "Kindly note that as per policy the degree & course name is not mentioned on electronic grade sheets. Such details are mentioned only on the hard copy of the transcript and degree certificate. Please note, hard copies of transcripts and degree certificates are sent via post only upon the successful completion of the program by the student.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0016",
+    "category": "REGISTRATION FAQ",
+    "question": "What is my semester fee?",
+    "answer": "The Fee payable will be mentioned on the payment page link for Registration. The fee payable is the same as the semester fee that you paid for your earlier semesters. Check your earlier fee receipts / earlier bank statements for the semester fee paid.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0160",
+    "category": "PROJECTS / VIVA",
+    "question": "What is the role of the BITS faculty mentor?",
+    "answer": "The BITS faculty mentor acts as both examiner and guide during the student\u2019s project journey. \u25cf The mentor conducts three VIVAs for each student: o Outline Submission: 10\u201315 minutes o Mid-Semester Submission: 15\u201320 minutes o Final VIVA: 30 minutes \u25cf VIVAs are scheduled via Microsoft Teams. \u25cf Based on the reports and VIVAs, the faculty mentor: o Grades students at each stage o Provides guidance, feedback, and improvement suggestions in the WILP VIVA portal.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0012",
+    "category": "REGISTRATION FAQ",
+    "question": "I have done my payment and it is debited from my account but the payment transaction details are showing as transaction Failed.",
+    "answer": "Please wait for sometime if your amount has been deducted. You can check your ERP after a few hours and check your status. If payment still doesn't reflect on ERP after 24 hours, you can contact your bank or accounts department of WILP.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0170",
+    "category": "GRADUATION",
+    "question": "Who should I approach for BITS Alumni related event details and If I want to participate and contribute?",
+    "answer": "Dear Alumni, For any BITS alumni-related queries, kindly send an email to wilpalumni@wilp.bits-pilani.ac.in.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0090",
+    "category": "PROJECTS / VIVA",
+    "question": "Can I work on a project outside my organization if it is related to my Programme or the courses I have learnt?",
+    "answer": "BITS recommends that students undertake their Dissertation/Project within their current organization, ensuring it is aligned with their programme domain. However, if no suitable project opportunity exists within the organization: \u25cf The student may take up an independent project outside the organization, provided it is relevant to the programme/courses and carried out under the guidance of a mentor. \u25cf A justification letter (on plain paper or company letterhead) signed by the organization\u2019s HR must be submitted, stating that no suitable internal project is available. \u25cf This letter should be emailed to support@wilp.bits-pilani.ac.in",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0077",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "Who would be the point-of-contact in the exam centre?",
+    "answer": "Unlike the online mode of exams where proctor is the first point of contact for students, at designated exam centres you can reach our the exam invigilator present in the exam hall if you are facing any issues pertaining to your exams",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0052",
+    "category": "INSTRUCTION",
+    "question": "Who is the point of contact in case of any issue reporting in any of the EC1 Components?",
+    "answer": "For any concerns or issues related to EC-1 Components like Labs, Assignments, Quizzes, and group activities, your course instructor is the designated point of contact. Kindly reach out to them for assistance and share your queries directly. Course assignment, access enablement, course handouts, academic calendars, exam calendars.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0019",
+    "category": "REGISTRATION FAQ",
+    "question": "Why I am getting \u201cYou owe Rs xxxxx\u201d message on ERP portal even after making the fee payment.",
+    "answer": "Please note that you are getting this error because you have made the EMI payment and not one-time full payment, however, you can ignore this message and it will be removed automatically after sometime when our reconciliation process gets completed. You can proceed with your semester courses selection.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0089",
+    "category": "PROJECTS / VIVA",
+    "question": "Is the Dissertation/Project/Project Work a group project or an individual project?",
+    "answer": "The Dissertation/Project/Project Work is to be undertaken as an individual project. Group projects are not permitted.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0049",
+    "category": "INSTRUCTION",
+    "question": "Where Can I find the Mid-Semester Exam Syllabus?",
+    "answer": "Kindly check your respective course handout for the syllabus and follow the classes where the faculty announce the exam syllabus and other details related to exam.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0152",
+    "category": "PROJECTS / VIVA",
+    "question": "What if my Supervisor and Additional Examiner are not able to attend the VIVA session?",
+    "answer": "If possible, invite your supervisor and additional examiner to attend the VIVA, as their presence is beneficial. \u25cf If they are unable to join, your BITS faculty mentor will conduct the VIVA. \u25cf The grade given by your faculty mentor will be considered final.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0101",
+    "category": "PROJECTS / VIVA",
+    "question": "What should I do if my supervisor leaves the organization in the middle of the Dissertation?",
+    "answer": "If your Supervisor leaves the organization during the course of your Dissertation, you must: 1. Inform BITS immediately about the change. 2. Identify and appoint a new Supervisor from your organization who meets the required eligibility criteria. 3. Share the details of the newly appointed Supervisor with BITS by emailing support@wilp.bits-pilani.ac.in.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0129",
+    "category": "PROJECTS / VIVA",
+    "question": "Will the project report require hard copy submission?",
+    "answer": "Students are required to upload the outline, mid-semester document, and final project document on the VIVA portal according to the timelines provided by BITS. No hard copy submission is required.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0022",
+    "category": "REGISTRATION FAQ",
+    "question": "I am not able to validate courses on ERP even after adding them on ERP.",
+    "answer": "Add the courses in Shopping Cart and not your Planner. Please refer to the manual for the process steps.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0156",
+    "category": "PROJECTS / VIVA",
+    "question": "How frequently should I connect with my Supervisor and Additional Examiner?",
+    "answer": "There is no fixed rule regarding the frequency of interactions with your Supervisor or Additional Examiner. The key is to ensure you receive timely guidance and inputs from them, which will help you successfully implement your project.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0122",
+    "category": "PROJECTS / VIVA",
+    "question": "Are we required to get approval to proceed in Stage 1 (Abstract Evaluation) from the Examiner before starting the work?",
+    "answer": "Yes, before beginning your Dissertation/Project/Project Work, you must submit the Project Outline along with the Abstract. The BITS Evaluator will review and evaluate the same during the interaction in Stage 1 (Abstract Evaluation).",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0149",
+    "category": "PROJECTS / VIVA",
+    "question": "What should be included in the PPT for Abstract, Mid-Semester, and Final Viva?",
+    "answer": "For all viva sessions, you will present your work to your faculty mentor, who will ask questions based on the work completed. The PPT should be a summarized version of your report or progress at each stage. There is no specific format required for the PPT.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0112",
+    "category": "PROJECTS / VIVA",
+    "question": "What are the various terminologies used in the T-Course?",
+    "answer": "Sr. No. Term / Abbreviation Definition 1 T-Course Thesis Course 2 Dissertation T-Course of Higher Degree Students (M.Tech) 3 Project T-Course of Higher Degree Students (MBA / M.Sc) 4 Project Work T-Course of First Degree Students (B.Tech) 5 Outline / Abstract Initial report submission related to the Dissertation/Project/Project work 6 Mid-Semester Second report submission related to the Dissertation/Project/Project work 7 Final Last report submission related to the Dissertation/Project/Project work 8 Turnitin Portal used for plagiarism and similarity check",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0104",
+    "category": "PROJECTS / VIVA",
+    "question": "What is the role of the Supervisor and Additional Examiner? Who selects them?",
+    "answer": "\u25cf The Mentor can also act as the Supervisor. \u25cf The Supervisor serves as the guide for the student and may act as one of the examiners. \u25cf If the Mentor is not the Supervisor, they must act as the Additional Examiner. \u25cf The Supervisor and Additional Examiner must be two different individuals, preferably from the current employing organization, and must have qualifications equivalent to or higher than the Mentor. \u25cf The same person cannot act as both Supervisor and Additional Examiner for the same student. Qualification requirements: \u25cf Supervisor: B.E. / B.Tech. / M.Sc. / MBA / MCA with 5+ years of relevant experience. \u25cf Additional Examiner: Qualification should be equivalent or higher than the Supervisor (e.g., M.E. / M.Tech. / M.S. / MBA / Ph.D.). \u25cf Restriction: Your subordinate cannot be your Supervisor or Additional Examiner; they must be in a position to provide guidance. Selection process: \u25cf The student, in consultation with their Supervisor, identifies the Dissertation topic and prepares the detailed Dissertation Outline. \u25cf Organizational members are expected to participate in project reviews. \u25cf If it is not possible to provide a Supervisor and/or Additional Examiner from the current organization, approval may be sought to select them from another organization, subject to BITS approval.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  }
+]

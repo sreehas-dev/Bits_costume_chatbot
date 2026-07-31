@@ -1,0 +1,13 @@
+# Runtime data
+users.csv
+feedback_logs.csv
+feedback_logs.json
+
+# Streamlit local secrets
+.streamlit/secrets.toml
+ui/.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.py[cod]
+

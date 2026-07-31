@@ -1,0 +1,146 @@
+[
+  {
+    "id": "FAQ_0046",
+    "category": "INSTRUCTION",
+    "question": "I am not able to download my grade sheet from portal, because I did not complete my last year Feedback Survey. What is the Solution?",
+    "answer": "Old feedback can't be open now due to timeline freeze. To Know marks and grade separately kindly send the mail to support@wilp.bits-pilani.ac.in.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0144",
+    "category": "PROJECTS / VIVA",
+    "question": "What should I do if TURNITIN is not showing the plagiarism percentage?",
+    "answer": "If the plagiarism percentage is not displayed, try the following troubleshooting steps: \u25cf Wait for Processing: Large documents or heavy server traffic may delay report generation. Wait for some time and refresh the page. \u25cf Ensure Proper Upload: Make sure the document was uploaded correctly. Re-upload if necessary. \u25cf Check Internet Connectivity: A stable connection is required for TURNITIN to process reports. \u25cf Clear Browser Cache and Cookies: This can resolve display issues. \u25cf Try a Different Browser or Device: This helps determine if the issue is specific to your current setup.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0044",
+    "category": "INSTRUCTION",
+    "question": "Where Can I find the course material and course syllabus detail?",
+    "answer": "Kindly check your e-learn portal & Microsoft Teams account of respective course for course material and course related information. Course Handout is available on e-learn portal course page for students after register in their respective course. Course handout Contain-Faculty name, name of the text/ref. books, lecture wise course syllabus, evaluation component dates.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0100",
+    "category": "PROJECTS / VIVA",
+    "question": "Can I change my supervisor if I switch organizations after starting the Dissertation?",
+    "answer": "It is strongly recommended not to change organizations during the Dissertation semester to avoid disruptions in project work. However, if you have switched organizations and wish to continue with the same project and Supervisor, you must provide the following: \u25cf A No Objection Certificate (NOC) from your previous organization, confirming that they have no objection to your continuing the project under the same Supervisor. \u25cf A No Objection Certificate (NOC) from your new organization, confirming their consent for you to continue the same project and Supervisor relationship. Both NOCs should be signed by HR and sent to support@wilp.bits-pilani.ac.in for approval and record.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0092",
+    "category": "PROJECTS / VIVA",
+    "question": "Who can be a supervisor? Who can be a mentor?",
+    "answer": "A Supervisor or Mentor should be a person with relevant work experience in the student\u2019s project domain. If the designated Mentor does not have sufficient technical expertise in the specific project area, the student may seek technical guidance from another qualified person within the organization, who can act as a Supervisor. Note: The same individual may serve as both Supervisor and Mentor, provided they meet the required domain expertise criteria.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0023",
+    "category": "REGISTRATION FAQ",
+    "question": "I am not able to add courses on ERP even after successful payment transaction.",
+    "answer": "Please click to refer to the WILP ERP Registration Manual.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0166",
+    "category": "ADMISSION RELATED",
+    "question": "How to exit the Programme midway and will I get refund on the Fee paid?",
+    "answer": "Please refer to our policy, which is clearly outlined on our website and reiterated in the admission offer letter that you have accepted prior to paying the admission & semester fee.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0033",
+    "category": "REGISTRATION FAQ",
+    "question": "Can I register in final semester (Dissertation / Project / Project Work) with backlog course?",
+    "answer": "The Dissertation / Project / Project Work will be assigned only after fulfilling the minimum academic course requirements. You cannot register for the final semester Dissertation / Project with pending Backlog subjects. If you have any backlog courses, you will have to take up additional semester(s) and clear the pending backlog subjects with a valid grade and then proceed to register for the Final Dissertation / Project Semester of your programme.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0121",
+    "category": "PROJECTS / VIVA",
+    "question": "What kind of grades are awarded in the final semester?",
+    "answer": "For the Dissertation/Project/Project Work, non-letter grades are awarded as follows: EXCELLENT, GOOD, FAIR, POOR, and RRA (Required to Register Again) \u2014 with a new project.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0108",
+    "category": "PROJECTS / VIVA",
+    "question": "Can we continue with the same mentor from previous organization?",
+    "answer": "It is recommended not to change organizations during the Dissertation semester. If you switch organizations and still wish to continue with the same project and supervisor, you must provide a No Objection Certificate (NOC) from both your previous and new organizations. The NOC should be on the organization\u2019s letterhead, signed by the authorized signatory, and must be shared with support@wilp.bits-pilani.ac.in",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0036",
+    "category": "REGISTRATION FAQ",
+    "question": "What is the last date for registration & when will the classes start?",
+    "answer": "Check the email sent by WILP Registration Cell to your BITS Mailbox for details related to deadline & registration process. You can also check the same in the announcement made on the eLearn portal. The Semester Class Start Date are announced on the eLearn portal before the commencement of the Semester Registration. You will also receive a class commencement email from WILP.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0073",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "Can I carry hand sanitizer and mask inside the examination hall?",
+    "answer": "You are permitted to carry hand sanitizer and mask inside the exam hall.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0065",
+    "category": "EXAMINATION",
+    "question": "Can I take Regular Exams as a trial exam?",
+    "answer": "No. Students are not allowed to write the Regular Mid-Semester / Comprehensive Exam as well as the corresponding Makeup Mid-Semester / Comprehensive Exam for the same evaluation component (EC2/ EC3) in a course. Makeup Exams are not to be used for the improvement of performance in the exams. If any student appears for both Regular as well as Make-up Exam for the same evaluation component of a course, then his / her registration in that course during the current semester will be canceled and he / she would be required to register again in that course later. Students who miss the Regular Mid-Semester / Comprehensive Exam, as well as the corresponding Make-up Mid-Semester / Comprehensive Exam for any course during the current semester, will be declared RRA (Required to Register Again) Report and they have to register for the same course during a later semester. No further Make-up Tests / Exams will be conducted irrespective of the reasons for missing the Make-up Tests / Exams.",
+    "difficulty": "Medium",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0145",
+    "category": "PROJECTS / VIVA",
+    "question": "I have clicked on the Turnitin account setup link but have not received the activation link. What should I do?",
+    "answer": "Please check your BITS email inbox for the activation link. Search for messages from \u201cTurnitin No Reply\u201d. Also, check your SPAM/Junk folder in case the email was filtered there.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0063",
+    "category": "EXAMINATION",
+    "question": "I have two exams scheduled on the same date & time. Should I take one of the exams in Make-up slot?",
+    "answer": "In case there is any clash in the examination schedule (Date + Session) for any two courses in the prescribed course package, then the student must appear for the Regular Exam for ONE of the two clashing courses, and take the Make-up Exam for the other clashing course.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0081",
+    "category": "EVALUATION",
+    "question": "Required CGPA",
+    "answer": "Please note that the minimum academic requirements for successful completion of our M.Tech. and MBA programs require that a student obtains a minimum CGPA of 5.50 and no E-Grade or RRA Report in any course. For B.Tech. programs, the student should obtain a minimum CGPA of 4.50 and no E Grade or RRA Report in any course. No student can register in any other course of his/her degree along with a Dissertation in M.Tech. or Project Work in B.Tech. Note: If your CGPA is Less than the required CGPA then you need to take an additional semester by paying the whole semester fee.",
+    "difficulty": "Easy",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0072",
+    "category": "EXAMS AT DESIGNATED CENTRES - ONSITE EXAMINATION",
+    "question": "Will I be allowed to take the exam if I report late at the exam centre?",
+    "answer": "Students will not be allowed inside the exam hall after the start of the examination.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  },
+  {
+    "id": "FAQ_0109",
+    "category": "PROJECTS / VIVA",
+    "question": "If a student joins a new organization and he finds a new supervisor there, is it necessary to take HR consent?",
+    "answer": "If the student joins a new organization and continues with the same project, consent is required from both the old and new organization\u2019s HR. If the student changes the Supervisor or the Supervisor leaves the company: \u25cf HR consent is required only if the new Supervisor is from outside the organization. In this case, a No Objection Certificate (NOC) from the organization must be obtained and shared with support@wilp.bits-pilani.ac.in. \u25cf If the new Supervisor is within the organization, HR consent is not required, but the student must inform WILP via email about the change.",
+    "difficulty": "Hard",
+    "source": "Official Portal"
+  }
+]
