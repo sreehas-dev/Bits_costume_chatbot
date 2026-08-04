@@ -4,6 +4,7 @@ import faiss
 import json
 import numpy as np
 import time
+from datetime import datetime, timedelta, timezone
 import requests
 import assemblyai as aai
 import difflib
@@ -54,6 +55,12 @@ GREETING_PROMPTS = {
 }
 
 def get_browser_hour() -> int:
+    """Return the visitor's local hour from browser query params.
+
+    Streamlit runs on the deployment server, so server local time must not be
+    used for greetings. Browser JavaScript stores the local hour in the URL;
+    if only a timestamp/offset is available, derive the same client-local hour.
+    """
     try:
         raw_hour = st.query_params.get("browser_hour", "")
         if isinstance(raw_hour, list):
@@ -63,7 +70,25 @@ def get_browser_hour() -> int:
             return hour
     except Exception:
         pass
-    return time.localtime().tm_hour
+
+    try:
+        raw_timestamp = st.query_params.get("browser_ts", "")
+        raw_offset = st.query_params.get("browser_tz_offset", "")
+        if isinstance(raw_timestamp, list):
+            raw_timestamp = raw_timestamp[0] if raw_timestamp else ""
+        if isinstance(raw_offset, list):
+            raw_offset = raw_offset[0] if raw_offset else ""
+        timestamp_ms = int(str(raw_timestamp))
+        offset_minutes = int(str(raw_offset))
+        client_utc = datetime.fromtimestamp(timestamp_ms / 1000, tz=timezone.utc)
+        client_local = client_utc - timedelta(minutes=offset_minutes)
+        return client_local.hour
+    except Exception:
+        pass
+
+    # Safe default if JavaScript has not populated client time yet. Do not use
+    # the deployed server's timezone because it may differ from the visitor.
+    return 12
 
 
 def get_time_greeting() -> str:
@@ -123,11 +148,34 @@ components.html(
     """
     <script>
     (function () {
-      const hour = String(new Date().getHours());
-      const parentUrl = new URL(window.parent.location.href);
-      if (parentUrl.searchParams.get("browser_hour") !== hour) {
-        parentUrl.searchParams.set("browser_hour", hour);
-        window.parent.location.replace(parentUrl.toString());
+      function syncBrowserTime() {
+        const now = new Date();
+        const hourBucket = new Date(
+          now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), 0, 0, 0
+        );
+        const params = {
+          browser_hour: String(now.getHours()),
+          browser_ts: String(hourBucket.getTime()),
+          browser_tz_offset: String(now.getTimezoneOffset()),
+          browser_tz: Intl.DateTimeFormat().resolvedOptions().timeZone || "",
+        };
+        const parentUrl = new URL(window.parent.location.href);
+        let changed = false;
+        for (const [key, value] of Object.entries(params)) {
+          if (parentUrl.searchParams.get(key) !== value) {
+            parentUrl.searchParams.set(key, value);
+            changed = true;
+          }
+        }
+        if (changed) {
+          window.parent.location.replace(parentUrl.toString());
+        }
+      }
+      try {
+        syncBrowserTime();
+        window.setInterval(syncBrowserTime, 60000);
+      } catch (error) {
+        console.warn("Unable to sync browser time for greeting", error);
       }
     })();
     </script>
@@ -187,6 +235,10 @@ if "messages" not in st.session_state:
     st.session_state.messages = [make_initial_message()]
 
 messages: list[dict[str, Any]] = st.session_state.messages
+
+current_initial_greeting = get_default_assistant_greeting()
+if is_initial_landing(messages) and messages[0].get("content") != current_initial_greeting:
+    messages[0]["content"] = current_initial_greeting
 
 if "feedback_state_loaded" not in st.session_state:
     for rated_message_id in feedback_renderer.store.get_rated_message_ids():

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
+from datetime import datetime, timedelta, timezone
 import re
-import time
 from typing import MutableMapping
 
 import streamlit as st
@@ -285,7 +285,23 @@ class AuthRenderer:
                 return hour
         except Exception:
             pass
-        return time.localtime().tm_hour
+
+        try:
+            raw_timestamp = st.query_params.get("browser_ts", "")
+            raw_offset = st.query_params.get("browser_tz_offset", "")
+            if isinstance(raw_timestamp, list):
+                raw_timestamp = raw_timestamp[0] if raw_timestamp else ""
+            if isinstance(raw_offset, list):
+                raw_offset = raw_offset[0] if raw_offset else ""
+            timestamp_ms = int(str(raw_timestamp))
+            offset_minutes = int(str(raw_offset))
+            client_utc = datetime.fromtimestamp(timestamp_ms / 1000, tz=timezone.utc)
+            client_local = client_utc - timedelta(minutes=offset_minutes)
+            return client_local.hour
+        except Exception:
+            pass
+
+        return 12
 
     @classmethod
     def _time_greeting(cls) -> str:

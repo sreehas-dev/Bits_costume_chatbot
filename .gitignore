@@ -1,13 +1,41 @@
 # Runtime data
 users.csv
+**/users.csv
 feedback_logs.csv
 feedback_logs.json
+**/feedback_logs.csv
+**/feedback_logs.json
+*.log
+
+# Local secrets and credentials
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
 
 # Streamlit local secrets
-.streamlit/secrets.toml
-ui/.streamlit/secrets.toml
+.streamlit/
+ui/.streamlit/
+secrets.toml
+**/secrets.toml
 
 # Python
 __pycache__/
 *.py[cod]
+.venv/
+venv/
 
+# IDE / local workspace
+.idea/
+.vscode/
+.devcontainer/
+
+# Local test artifacts
+*.wav
+*.mp3
+*.m4a
+*.webm
