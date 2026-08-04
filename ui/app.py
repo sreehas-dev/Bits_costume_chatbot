@@ -55,22 +55,13 @@ GREETING_PROMPTS = {
 }
 
 def get_browser_hour() -> int:
-    """Return the visitor's local hour from browser query params.
+    """Return the visitor's local hour from fresh browser query params.
 
     Streamlit runs on the deployment server, so server local time must not be
-    used for greetings. Browser JavaScript stores the local hour in the URL;
-    if only a timestamp/offset is available, derive the same client-local hour.
+    used as the primary source for greetings. Browser JavaScript stores an
+    hour-bucket timestamp and timezone offset in the URL. Old hour-only URLs
+    are ignored because they can keep showing a stale greeting.
     """
-    try:
-        raw_hour = st.query_params.get("browser_hour", "")
-        if isinstance(raw_hour, list):
-            raw_hour = raw_hour[0] if raw_hour else ""
-        hour = int(str(raw_hour))
-        if 0 <= hour <= 23:
-            return hour
-    except Exception:
-        pass
-
     try:
         raw_timestamp = st.query_params.get("browser_ts", "")
         raw_offset = st.query_params.get("browser_tz_offset", "")
@@ -80,15 +71,35 @@ def get_browser_hour() -> int:
             raw_offset = raw_offset[0] if raw_offset else ""
         timestamp_ms = int(str(raw_timestamp))
         offset_minutes = int(str(raw_offset))
-        client_utc = datetime.fromtimestamp(timestamp_ms / 1000, tz=timezone.utc)
-        client_local = client_utc - timedelta(minutes=offset_minutes)
-        return client_local.hour
+
+        now_ms = int(time.time() * 1000)
+        # JS sends the timestamp rounded down to the start of the current hour.
+        # Accept it for a little over 2 hours; older values are stale URL params.
+        if 0 <= now_ms - timestamp_ms <= 2 * 60 * 60 * 1000:
+            client_utc = datetime.fromtimestamp(timestamp_ms / 1000, tz=timezone.utc)
+            client_local = client_utc - timedelta(minutes=offset_minutes)
+            return client_local.hour
     except Exception:
         pass
 
-    # Safe default if JavaScript has not populated client time yet. Do not use
-    # the deployed server's timezone because it may differ from the visitor.
-    return 12
+    try:
+        raw_hour = st.query_params.get("browser_hour", "")
+        raw_timestamp = st.query_params.get("browser_ts", "")
+        if isinstance(raw_hour, list):
+            raw_hour = raw_hour[0] if raw_hour else ""
+        if isinstance(raw_timestamp, list):
+            raw_timestamp = raw_timestamp[0] if raw_timestamp else ""
+        # Trust browser_hour only when it came with the current JS timestamp.
+        if raw_timestamp:
+            hour = int(str(raw_hour))
+            if 0 <= hour <= 23:
+                return hour
+    except Exception:
+        pass
+
+    # First-run/local-test fallback only. Browser query params remain the
+    # primary source once JavaScript has synced them.
+    return time.localtime().tm_hour
 
 
 def get_time_greeting() -> str:
@@ -385,6 +396,14 @@ with st.sidebar:
             st.metric("Last Confidence", f"{st.session_state.last_confidence:.3f}")
         st.metric("Feedback Records", feedback_renderer.store.count())
         st.caption(f"CSV: {FEEDBACK_CSV_PATH}")
+        st.caption(
+            "Browser time debug: "
+            f"hour={st.query_params.get('browser_hour', '')}, "
+            f"ts={st.query_params.get('browser_ts', '')}, "
+            f"tz={st.query_params.get('browser_tz', '')}, "
+            f"offset={st.query_params.get('browser_tz_offset', '')}, "
+            f"computed={get_browser_hour()}"
+        )
 
 # ──────────────────────────────────────────────
 # DISPLAY CHAT HISTORY
