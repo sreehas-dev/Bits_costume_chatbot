@@ -197,6 +197,7 @@ SQLAlchemy==1.4.54
 srsly==2.5.3
 ssmd==0.7.2
 streamlit==1.53.0
+streamlit-js-eval==1.0.0
 sympy==1.14.0
 tenacity==9.1.2
 tensorboard==2.20.0

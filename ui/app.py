@@ -1,5 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
+from streamlit_js_eval import streamlit_js_eval
 import faiss
 import json
 import numpy as np
@@ -54,61 +55,73 @@ GREETING_PROMPTS = {
     "good evening",
 }
 
-def get_browser_hour() -> int:
-    """Return the visitor's local hour from fresh browser query params.
+def _as_valid_hour(value: Any) -> int | None:
+    try:
+        if value is None:
+            return None
+        hour = int(value)
+        return hour if 0 <= hour <= 23 else None
+    except Exception:
+        return None
 
-    Streamlit runs on the deployment server, so server local time must not be
-    used as the primary source for greetings. Browser JavaScript stores an
-    hour-bucket timestamp and timezone offset in the URL. Old hour-only URLs
-    are ignored because they can keep showing a stale greeting.
+
+def read_browser_time() -> dict[str, Any]:
+    """Read browser-local time directly from the frontend.
+
+    This avoids depending on Streamlit Cloud/server timezone or URL rewriting,
+    which can be inconsistent on deployed desktop browsers.
     """
-    try:
-        raw_timestamp = st.query_params.get("browser_ts", "")
-        raw_offset = st.query_params.get("browser_tz_offset", "")
-        if isinstance(raw_timestamp, list):
-            raw_timestamp = raw_timestamp[0] if raw_timestamp else ""
-        if isinstance(raw_offset, list):
-            raw_offset = raw_offset[0] if raw_offset else ""
-        timestamp_ms = int(str(raw_timestamp))
-        offset_minutes = int(str(raw_offset))
-
-        now_ms = int(time.time() * 1000)
-        # JS sends the timestamp rounded down to the start of the current hour.
-        # Accept it for a little over 2 hours; older values are stale URL params.
-        if 0 <= now_ms - timestamp_ms <= 2 * 60 * 60 * 1000:
-            client_utc = datetime.fromtimestamp(timestamp_ms / 1000, tz=timezone.utc)
-            client_local = client_utc - timedelta(minutes=offset_minutes)
-            return client_local.hour
-    except Exception:
-        pass
-
-    try:
-        raw_hour = st.query_params.get("browser_hour", "")
-        raw_timestamp = st.query_params.get("browser_ts", "")
-        if isinstance(raw_hour, list):
-            raw_hour = raw_hour[0] if raw_hour else ""
-        if isinstance(raw_timestamp, list):
-            raw_timestamp = raw_timestamp[0] if raw_timestamp else ""
-        # Trust browser_hour only when it came with the current JS timestamp.
-        if raw_timestamp:
-            hour = int(str(raw_hour))
-            if 0 <= hour <= 23:
-                return hour
-    except Exception:
-        pass
-
-    # First-run/local-test fallback only. Browser query params remain the
-    # primary source once JavaScript has synced them.
-    return time.localtime().tm_hour
+    value = streamlit_js_eval(
+        js_expressions="""
+        (() => {
+          const now = new Date();
+          return {
+            hour: now.getHours(),
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "",
+            timezoneOffset: now.getTimezoneOffset(),
+            timestamp: now.getTime()
+          };
+        })()
+        """,
+        key="browser_time_bridge",
+        default=None,
+    )
+    if isinstance(value, dict):
+        hour = _as_valid_hour(value.get("hour"))
+        if hour is not None:
+            browser_time = {
+                "hour": hour,
+                "timezone": str(value.get("timezone") or ""),
+                "timezone_offset": int(value.get("timezoneOffset") or 0),
+                "timestamp": int(value.get("timestamp") or 0),
+            }
+            st.session_state.browser_time = browser_time
+            return browser_time
+    existing = st.session_state.get("browser_time", {})
+    return existing if isinstance(existing, dict) else {}
 
 
-def get_time_greeting() -> str:
-    hour = get_browser_hour()
+def get_browser_hour() -> int | None:
+    browser_time = st.session_state.get("browser_time", {})
+    if isinstance(browser_time, dict):
+        hour = _as_valid_hour(browser_time.get("hour"))
+        if hour is not None:
+            return hour
+    return None
+
+
+def time_greeting_for_hour(hour: int | None) -> str:
+    if hour is None:
+        return "Hello"
     if 5 <= hour < 12:
         return "Good morning"
     if 12 <= hour < 17:
         return "Good afternoon"
     return "Good evening"
+
+
+def get_time_greeting() -> str:
+    return time_greeting_for_hour(get_browser_hour())
 
 
 def get_default_assistant_greeting() -> str:
@@ -150,43 +163,36 @@ st.markdown(
         #MainMenu { visibility: hidden; }
         footer { visibility: hidden; }
         header { visibility: hidden; }
+        .landing-greeting-client { visibility: hidden; }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
+read_browser_time()
+
 components.html(
     """
     <script>
     (function () {
-      function syncBrowserTime() {
-        const now = new Date();
-        const hourBucket = new Date(
-          now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), 0, 0, 0
-        );
-        const params = {
-          browser_hour: String(now.getHours()),
-          browser_ts: String(hourBucket.getTime()),
-          browser_tz_offset: String(now.getTimezoneOffset()),
-          browser_tz: Intl.DateTimeFormat().resolvedOptions().timeZone || "",
-        };
-        const parentUrl = new URL(window.parent.location.href);
-        let changed = false;
-        for (const [key, value] of Object.entries(params)) {
-          if (parentUrl.searchParams.get(key) !== value) {
-            parentUrl.searchParams.set(key, value);
-            changed = true;
-          }
-        }
-        if (changed) {
-          window.parent.location.replace(parentUrl.toString());
-        }
+      function greetingForHour(hour) {
+        if (hour >= 5 && hour < 12) return "Good morning";
+        if (hour >= 12 && hour < 17) return "Good afternoon";
+        return "Good evening";
+      }
+      function updateGreeting() {
+        const text = greetingForHour(new Date().getHours()) + "! I am BITS Pilani AI Assistant.";
+        const doc = window.parent.document;
+        doc.querySelectorAll(".landing-greeting-client").forEach(function (el) {
+          el.textContent = text;
+          el.style.visibility = "visible";
+        });
       }
       try {
-        syncBrowserTime();
-        window.setInterval(syncBrowserTime, 60000);
+        updateGreeting();
+        window.setInterval(updateGreeting, 60000);
       } catch (error) {
-        console.warn("Unable to sync browser time for greeting", error);
+        console.warn("Unable to update browser-local greeting", error);
       }
     })();
     </script>
@@ -396,12 +402,12 @@ with st.sidebar:
             st.metric("Last Confidence", f"{st.session_state.last_confidence:.3f}")
         st.metric("Feedback Records", feedback_renderer.store.count())
         st.caption(f"CSV: {FEEDBACK_CSV_PATH}")
+        browser_time = st.session_state.get("browser_time", {})
         st.caption(
             "Browser time debug: "
-            f"hour={st.query_params.get('browser_hour', '')}, "
-            f"ts={st.query_params.get('browser_ts', '')}, "
-            f"tz={st.query_params.get('browser_tz', '')}, "
-            f"offset={st.query_params.get('browser_tz_offset', '')}, "
+            f"hour={browser_time.get('hour', '') if isinstance(browser_time, dict) else ''}, "
+            f"tz={browser_time.get('timezone', '') if isinstance(browser_time, dict) else ''}, "
+            f"offset={browser_time.get('timezone_offset', '') if isinstance(browser_time, dict) else ''}, "
             f"computed={get_browser_hour()}"
         )
 
@@ -435,7 +441,7 @@ if landing_mode:
                 margin: 0 auto;
             }}
         </style>
-        <div class="landing-greeting">{get_default_assistant_greeting()}</div>
+        <div class="landing-greeting landing-greeting-client">{get_default_assistant_greeting()}</div>
         """,
         unsafe_allow_html=True,
     )

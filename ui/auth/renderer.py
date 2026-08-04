@@ -277,6 +277,15 @@ class AuthRenderer:
 
     @staticmethod
     def _browser_hour() -> int:
+        browser_time = st.session_state.get("browser_time", {})
+        if isinstance(browser_time, dict):
+            try:
+                hour = int(browser_time.get("hour"))
+                if 0 <= hour <= 23:
+                    return hour
+            except Exception:
+                pass
+
         try:
             raw_timestamp = st.query_params.get("browser_ts", "")
             raw_offset = st.query_params.get("browser_tz_offset", "")
@@ -292,20 +301,6 @@ class AuthRenderer:
                 client_utc = datetime.fromtimestamp(timestamp_ms / 1000, tz=timezone.utc)
                 client_local = client_utc - timedelta(minutes=offset_minutes)
                 return client_local.hour
-        except Exception:
-            pass
-
-        try:
-            raw_hour = st.query_params.get("browser_hour", "")
-            raw_timestamp = st.query_params.get("browser_ts", "")
-            if isinstance(raw_hour, list):
-                raw_hour = raw_hour[0] if raw_hour else ""
-            if isinstance(raw_timestamp, list):
-                raw_timestamp = raw_timestamp[0] if raw_timestamp else ""
-            if raw_timestamp:
-                hour = int(str(raw_hour))
-                if 0 <= hour <= 23:
-                    return hour
         except Exception:
             pass
 
