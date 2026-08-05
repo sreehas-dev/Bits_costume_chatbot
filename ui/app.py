@@ -313,6 +313,71 @@ def autocorrect_prompt(prompt: str, faq_data: list[dict[str, Any]]) -> str:
     return re.sub(r"\b[A-Za-z][A-Za-z0-9-]*\b", correct_token, prompt)
 
 
+def stream_markdown_response(text: str, placeholder: Any) -> None:
+    """Stream Markdown text without collapsing newlines or list formatting."""
+    displayed = ""
+    for token in re.findall(r"\S+\s*|\n+", text):
+        displayed += token
+        placeholder.markdown(displayed + "▌")
+        time.sleep(0.02)
+    placeholder.markdown(displayed.strip())
+
+
+def format_faq_answer(answer: str) -> str:
+    """Convert raw FAQ answer text into readable Markdown using generic patterns."""
+    text = re.sub(r"\s+", " ", str(answer).strip())
+    if not text:
+        return text
+
+    text = re.sub(r"\s*●\s*", "\n- ", text)
+    text = re.sub(r"(?<![\w.])([a-g])\.\s+(?=[A-Z])", "\n- ", text)
+    text = re.sub(r"\s+o\s+(?=[A-Z])", "\n  - ", text)
+    text = re.sub(r"\s*(Option)[-\s]*(\d+)\s*:", r"\n\n**Option \2:** ", text, flags=re.IGNORECASE)
+    text = re.sub(r"(?<![\w.])(\d+)\.\s+", r"\n\1. ", text)
+    text = re.sub(r"\s*PS\s*:", "\n\n**Important note:**", text, flags=re.IGNORECASE)
+
+    heading_patterns = [
+        r"NOC Submission Process",
+        r"Qualification requirements",
+        r"Selection process",
+        r"Points to cover in each VIVA",
+        r"Common links to be used by all students",
+        r"Important Format Links for General/Engineering Students",
+        r"Important Format Links for Management Students",
+        r"Restriction",
+        r"Important",
+        r"Note",
+    ]
+    for pattern in heading_patterns:
+        text = re.sub(
+            rf"\s*({pattern})\s*:",
+            lambda match: f"\n\n**{match.group(1)}:**",
+            text,
+            flags=re.IGNORECASE,
+        )
+
+    text = re.sub(
+        r"\s+(For\s+(?:MBA|M\.Tech|B\.Tech|Dissertation|Project work)[^:]{0,80}?Students)\s*:",
+        lambda match: f"\n\n**{match.group(1)}:**",
+        text,
+        flags=re.IGNORECASE,
+    )
+
+    lines = [line.strip() for line in text.splitlines()]
+    cleaned_lines: list[str] = []
+    previous_blank = False
+    for line in lines:
+        if not line:
+            if not previous_blank and cleaned_lines:
+                cleaned_lines.append("")
+            previous_blank = True
+            continue
+        cleaned_lines.append(line)
+        previous_blank = False
+
+    return "\n".join(cleaned_lines).strip()
+
+
 def process_prompt(prompt: str, append_user_message: bool = True, render_user_message: bool = True) -> None:
     prompt = prompt.strip()
     if not prompt:
@@ -352,18 +417,12 @@ def process_prompt(prompt: str, append_user_message: bool = True, render_user_me
                 full_response = FALLBACK_RESPONSE
             else:
                 matched_record = data[top_idx]
-                full_response = matched_record["answer"]
+                full_response = format_faq_answer(matched_record["answer"])
                 matched_question = matched_record.get("question", "")
                 faq_id = matched_record.get("id", "")
                 category = matched_record.get("category", "")
 
-        displayed = ""
-        for word in full_response.split():
-            displayed += word + " "
-            placeholder.markdown(displayed + "▌")
-            time.sleep(0.02)
-
-        placeholder.markdown(displayed.strip())
+        stream_markdown_response(full_response, placeholder)
 
     assistant_message = {
         "role": "assistant",
@@ -450,11 +509,11 @@ else:
         if msg["role"] == "assistant":
             try:
                 with st.chat_message("assistant", avatar=LOGO_PATH):
-                    st.write(msg["content"])
+                    st.markdown(msg["content"])
                     feedback_renderer.render(msg, st.session_state)
             except Exception:
                 with st.chat_message("assistant"):
-                    st.write(msg["content"])
+                    st.markdown(msg["content"])
                     feedback_renderer.render(msg, st.session_state)
         else:
             st.chat_message("user").write(msg["content"])
