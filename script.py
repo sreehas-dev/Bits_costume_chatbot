@@ -4,8 +4,8 @@
 # LOGIN_URL = "https://elearn.bits-pilani.ac.in/"
 # FAQ_URL = "https://elearn.bits-pilani.ac.in/studentsupport/"
 #
-# USERNAME = "202217b2052@wilp.bits-pilani.ac.in"
-# PASSWORD = "Grlpksbits@2424"
+# USERNAME = "your_username_from_env"
+# PASSWORD = "your_password_from_env"
 #
 # faq_data = []
 #

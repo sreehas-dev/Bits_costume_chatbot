@@ -1,10 +1,11 @@
 from playwright.sync_api import sync_playwright
 import json
 import time
+import os
 
-URL = "https://elearn.bits-pilani.ac.in/"
-USERNAME = "202217b2052@wilp.bits-pilani.ac.in"
-PASSWORD = "Grlpksbits@2424"
+URL = os.getenv("ELEARN_URL", "https://elearn.bits-pilani.ac.in/")
+USERNAME = os.getenv("ELEARN_USERNAME", "")
+PASSWORD = os.getenv("ELEARN_PASSWORD", "")
 
 output = []
 
