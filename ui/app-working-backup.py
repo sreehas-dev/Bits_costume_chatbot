@@ -84,10 +84,12 @@ with st.sidebar:
         st.rerun()
 
     # 3. Admin Debug (Hidden from students)
-    with st.expander("🛠️ Admin Tools"):
-        st.write("Debug Mode")
-        if "last_confidence" in st.session_state:
-            st.metric("Last Confidence", f"{st.session_state.last_confidence:.3f}")
+    # Production disable: Admin Tools panel hidden for student release.
+    # Uncomment this block in the future to re-enable admin diagnostics.
+    # with st.expander("🛠️ Admin Tools"):
+    #     st.write("Debug Mode")
+    #     if "last_confidence" in st.session_state:
+    #         st.metric("Last Confidence", f"{st.session_state.last_confidence:.3f}")
 
 # ================= CHAT INTERFACE =================
 

@@ -6,8 +6,10 @@ import json
 import numpy as np
 import time
 from datetime import datetime, timedelta, timezone
-import requests
-import assemblyai as aai
+# Production disable: Voice backend imports hidden for student release.
+# Uncomment these imports in the future to re-enable voice input.
+# import requests
+# import assemblyai as aai
 import difflib
 import re
 from pathlib import Path
@@ -29,10 +31,12 @@ FAQ_DATA_PATH = DATA_PATH / "faq_merged_v2.json"
 LOGO_PATH  = "bits_logo.png"
 FEEDBACK_CSV_PATH = BASE_DIR / "feedback_logs.csv"
 
-try:
-    ASSEMBLYAI_API_KEY = st.secrets["ASSEMBLYAI_API_KEY"]
-except Exception:
-    ASSEMBLYAI_API_KEY = "YOUR_ASSEMBLYAI_API_KEY_HERE"
+# Production disable: Voice API key setup hidden for student release.
+# Uncomment this block in the future to re-enable voice input.
+# try:
+#     ASSEMBLYAI_API_KEY = st.secrets["ASSEMBLYAI_API_KEY"]
+# except Exception:
+#     ASSEMBLYAI_API_KEY = "YOUR_ASSEMBLYAI_API_KEY_HERE"
 
 THRESHOLD = 0.60
 TOP_K = 1
@@ -145,7 +149,9 @@ def is_initial_landing(messages_list: list[dict[str, Any]]) -> bool:
     )
 
 
-aai.settings.api_key = ASSEMBLYAI_API_KEY
+# Production disable: Voice backend setup hidden for student release.
+# Uncomment this line in the future to re-enable voice input.
+# aai.settings.api_key = ASSEMBLYAI_API_KEY
 
 # ──────────────────────────────────────────────
 # PAGE SETUP
@@ -218,25 +224,28 @@ except Exception:
     st.error("System is initialising… Please wait or check resource paths.")
     st.stop()
 
-# ──────────────────────────────────────────────
-# STREAMING TOKEN
-# ──────────────────────────────────────────────
-@st.cache_data(ttl=540)
-def get_streaming_token(api_key: str) -> str:
-    try:
-        resp = requests.get(
-            "https://streaming.assemblyai.com/v3/token",
-            params={"expires_in_seconds": 600},
-            headers={"Authorization": api_key},
-            timeout=10,
-        )
-        resp.raise_for_status()
-        return resp.json().get("token", "")
-    except Exception as e:
-        st.error(f"AssemblyAI token error: {e}")
-        return ""
-
-STREAMING_TOKEN = get_streaming_token(ASSEMBLYAI_API_KEY)
+# Production disable: Voice streaming token generation hidden for student release.
+# Uncomment this block in the future to re-enable voice input.
+# # ──────────────────────────────────────────────
+# # STREAMING TOKEN
+# # ──────────────────────────────────────────────
+# @st.cache_data(ttl=540)
+# def get_streaming_token(api_key: str) -> str:
+#     try:
+#         resp = requests.get(
+#             "https://streaming.assemblyai.com/v3/token",
+#             params={"expires_in_seconds": 600},
+#             headers={"Authorization": api_key},
+#             timeout=10,
+#         )
+#         resp.raise_for_status()
+#         return resp.json().get("token", "")
+#     except Exception as e:
+#         st.error(f"AssemblyAI token error: {e}")
+#         return ""
+#
+# STREAMING_TOKEN = get_streaming_token(ASSEMBLYAI_API_KEY)
+#
 
 @st.cache_resource
 def get_feedback_renderer() -> FeedbackRenderer:
@@ -456,19 +465,21 @@ with st.sidebar:
         st.session_state.pending_landing_prompt = None
         st.rerun()
 
-    with st.expander("🛠️ Admin Tools"):
-        if "last_confidence" in st.session_state:
-            st.metric("Last Confidence", f"{st.session_state.last_confidence:.3f}")
-        st.metric("Feedback Records", feedback_renderer.store.count())
-        st.caption(f"CSV: {FEEDBACK_CSV_PATH}")
-        browser_time = st.session_state.get("browser_time", {})
-        st.caption(
-            "Browser time debug: "
-            f"hour={browser_time.get('hour', '') if isinstance(browser_time, dict) else ''}, "
-            f"tz={browser_time.get('timezone', '') if isinstance(browser_time, dict) else ''}, "
-            f"offset={browser_time.get('timezone_offset', '') if isinstance(browser_time, dict) else ''}, "
-            f"computed={get_browser_hour()}"
-        )
+    # Production disable: Admin Tools panel hidden for student release.
+    # Uncomment this block in the future to re-enable admin diagnostics.
+    # with st.expander("🛠️ Admin Tools"):
+    #     if "last_confidence" in st.session_state:
+    #         st.metric("Last Confidence", f"{st.session_state.last_confidence:.3f}")
+    #     st.metric("Feedback Records", feedback_renderer.store.count())
+    #     st.caption(f"CSV: {FEEDBACK_CSV_PATH}")
+    #     browser_time = st.session_state.get("browser_time", {})
+    #     st.caption(
+    #         "Browser time debug: "
+    #         f"hour={browser_time.get('hour', '') if isinstance(browser_time, dict) else ''}, "
+    #         f"tz={browser_time.get('timezone', '') if isinstance(browser_time, dict) else ''}, "
+    #         f"offset={browser_time.get('timezone_offset', '') if isinstance(browser_time, dict) else ''}, "
+    #         f"computed={get_browser_hour()}"
+    #     )
 
 # ──────────────────────────────────────────────
 # DISPLAY CHAT HISTORY
@@ -551,491 +562,493 @@ if typed_prompt := st.chat_input(CHAT_INPUT_PLACEHOLDER, key="landing_chat_input
 # ──────────────────────────────────────────────
 # VOICE COMPONENT
 # ──────────────────────────────────────────────
-VOICE_HTML = r"""
-<script>
-(function () {
-  const P = window.parent;
-  const TOKEN = "__TOKEN__";
-  const WS_URL = "wss://streaming.assemblyai.com/v3/ws";
-  const SAMPLE_RATE = 16000;
-  const BTN_ID = "aai-mic-btn";
-  const RECORDRTC_ID = "aai-recordrtc-script";
-  const PULSE_STYLE_ID = "aai-pulse-css";
-
-  function getDoc() {
-    return P.document;
-  }
-
-  function loadScriptIntoParent(src, id, cb) {
-    const pd = getDoc();
-    if (!pd || !pd.head) return;
-
-    if (id && pd.getElementById(id)) {
-      cb();
-      return;
-    }
-
-    const s = pd.createElement("script");
-    if (id) s.id = id;
-    s.src = src;
-    s.onload = cb;
-    s.onerror = () => console.error("Failed to load script:", src);
-    pd.head.appendChild(s);
-  }
-
-  function injectCss() {
-    const pd = getDoc();
-    if (!pd || pd.getElementById(PULSE_STYLE_ID)) return;
-
-    const style = pd.createElement("style");
-    style.id = PULSE_STYLE_ID;
-    style.textContent = `
-      @keyframes aaiPulse {
-        0%   { box-shadow: 0 0 0 0px rgba(168,85,247,0.7); }
-        70%  { box-shadow: 0 0 0 10px rgba(168,85,247,0); }
-        100% { box-shadow: 0 0 0 0px rgba(168,85,247,0); }
-      }
-      #${BTN_ID}.recording {
-        animation: aaiPulse 1.2s ease-out infinite !important;
-      }
-    `;
-    pd.head.appendChild(style);
-  }
-
-  function getWrapper() {
-    return P.document.querySelector('div[data-testid="stChatInput"]');
-  }
-
-  function getTextarea() {
-    const w = getWrapper();
-    return w ? w.querySelector("textarea") : null;
-  }
-
-  function setTextarea(text) {
-    const ta = getTextarea();
-    if (!ta) return;
-
-    const setter = Object.getOwnPropertyDescriptor(
-      P.HTMLTextAreaElement.prototype,
-      "value"
-    ).set;
-
-    setter.call(ta, text);
-    ta.dispatchEvent(new Event("input", { bubbles: true }));
-    ta.focus();
-  }
-
-  function buildMicSvg(active) {
-    const stroke = active ? "#a855f7" : "#ffffff";
-    return `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-        stroke="${stroke}" stroke-width="2.2"
-        stroke-linecap="round" stroke-linejoin="round">
-        <rect x="9" y="2" width="6" height="12" rx="3"></rect>
-        <path d="M5 10a7 7 0 0 0 14 0"></path>
-        <line x1="12" y1="19" x2="12" y2="22"></line>
-        <line x1="8" y1="22" x2="16" y2="22"></line>
-      </svg>
-    `;
-  }
-
-  function ensureState() {
-    if (P.__aaiMicState) return P.__aaiMicState;
-
-    P.__aaiMicState = {
-      socket: null,
-      recorder: null,
-      micStream: null,
-      isRecording: false,
-      committedText: "",
-      partialText: "",
-      finalizing: false,
-      finalizeTimer: null,
-      intentionalClose: false,
-    };
-
-    return P.__aaiMicState;
-  }
-
-  function setButtonVisual(active) {
-    const btn = getButton();
-    if (!btn) return;
-
-    btn.innerHTML = buildMicSvg(active);
-
-    if (active) {
-      btn.classList.add("recording");
-      btn.style.background = "rgba(168,85,247,0.18)";
-    } else {
-      btn.classList.remove("recording");
-      btn.style.background = "transparent";
-    }
-  }
-
-  function getButton() {
-    const w = getWrapper();
-    return w ? w.querySelector(`#${BTN_ID}`) : null;
-  }
-
-  function removeOldButton() {
-    const old = P.document.getElementById(BTN_ID);
-    if (old) old.remove();
-  }
-
-  function silentCleanup() {
-    const s = ensureState();
-
-    if (s.finalizeTimer) {
-      clearTimeout(s.finalizeTimer);
-      s.finalizeTimer = null;
-    }
-
-    if (s.recorder) {
-      try { s.recorder.stopRecording(); } catch (e) {}
-      s.recorder = null;
-    }
-
-    if (s.micStream) {
-      try { s.micStream.getTracks().forEach(t => t.stop()); } catch (e) {}
-      s.micStream = null;
-    }
-
-    if (s.socket) {
-      try {
-        s.socket.onopen = null;
-        s.socket.onmessage = null;
-        s.socket.onerror = null;
-        s.socket.onclose = null;
-        s.socket.close();
-      } catch (e) {}
-      s.socket = null;
-    }
-  }
-
-  function hardReset() {
-    const s = ensureState();
-    silentCleanup();
-    s.isRecording = false;
-    s.committedText = "";
-    s.partialText = "";
-    s.finalizing = false;
-    s.intentionalClose = false;
-    setButtonVisual(false);
-  }
-
-  function finalizeTranscript() {
-    const s = ensureState();
-    if (s.finalizing) return;
-    s.finalizing = true;
-
-    if (s.finalizeTimer) {
-      clearTimeout(s.finalizeTimer);
-      s.finalizeTimer = null;
-    }
-
-    if (s.socket) {
-      try {
-        s.socket.onopen = null;
-        s.socket.onmessage = null;
-        s.socket.onerror = null;
-        s.socket.onclose = null;
-        s.socket.close();
-      } catch (e) {}
-      s.socket = null;
-    }
-
-    const finalText = (s.committedText || "").trim();
-
-    s.isRecording = false;
-    s.committedText = "";
-    s.partialText = "";
-    s.finalizing = false;
-    s.intentionalClose = false;
-
-    setButtonVisual(false);
-
-    if (finalText) setTextarea(finalText);
-  }
-
-  function startSession() {
-    const s = ensureState();
-
-    if (s.isRecording) return;
-
-    if (!TOKEN || TOKEN === "YOUR_ASSEMBLYAI_API_KEY_HERE") {
-      alert("AssemblyAI streaming token is missing.");
-      return;
-    }
-
-    hardReset();
-    s.isRecording = true;
-    setButtonVisual(true);
-
-    let ws;
-    try {
-      ws = new P.WebSocket(
-        WS_URL +
-          "?sample_rate=" + SAMPLE_RATE +
-          "&encoding=pcm_s16le" +
-          "&token=" + encodeURIComponent(TOKEN)
-      );
-    } catch (e) {
-      alert("WebSocket could not be created: " + e.message);
-      hardReset();
-      return;
-    }
-
-    s.socket = ws;
-
-    ws.onopen = async function () {
-      if (s.socket !== ws) {
-        try { ws.close(); } catch (e) {}
-        return;
-      }
-
-      try {
-        const stream = await P.navigator.mediaDevices.getUserMedia({ audio: true });
-        if (s.socket !== ws) {
-          stream.getTracks().forEach(t => t.stop());
-          return;
-        }
-
-        s.micStream = stream;
-
-        if (!P.RecordRTC || !P.StereoAudioRecorder) {
-          alert("RecordRTC did not load correctly.");
-          hardReset();
-          return;
-        }
-
-        s.recorder = new P.RecordRTC(stream, {
-          type: "audio",
-          mimeType: "audio/webm;codecs=pcm",
-          recorderType: P.StereoAudioRecorder,
-          desiredSampRate: SAMPLE_RATE,
-          numberOfAudioChannels: 1,
-          bufferSize: 4096,
-          timeSlice: 250,
-          ondataavailable: function (blob) {
-            if (s.socket === ws && ws.readyState === 1) {
-              blob.arrayBuffer().then(function (buf) {
-                if (s.socket === ws && ws.readyState === 1) {
-                  ws.send(buf);
-                }
-              });
-            }
-          }
-        });
-
-        s.recorder.startRecording();
-      } catch (err) {
-        alert("Microphone access denied: " + err.message);
-        hardReset();
-      }
-    };
-
-    ws.onmessage = function (ev) {
-      if (s.socket !== ws) return;
-
-      let msg;
-      try {
-        msg = JSON.parse(ev.data);
-      } catch (e) {
-        return;
-      }
-
-      if (msg.type === "Turn") {
-        s.partialText = msg.transcript || "";
-        const live = (s.committedText + " " + s.partialText).trim();
-        if (live) setTextarea(live);
-
-        if (msg.end_of_turn) {
-          s.committedText = live;
-          s.partialText = "";
-        }
-      }
-    };
-
-    ws.onerror = function () {
-      if (s.socket === ws) hardReset();
-    };
-
-    ws.onclose = function () {
-      if (s.socket === ws && s.isRecording && !s.intentionalClose) {
-        hardReset();
-      }
-    };
-  }
-
-  function stopSession() {
-    const s = ensureState();
-    if (!s.isRecording) return;
-
-    const ws = s.socket;
-    s.isRecording = false;
-    s.intentionalClose = true;
-    setButtonVisual(false);
-
-    if (s.recorder) {
-      try { s.recorder.stopRecording(); } catch (e) {}
-      s.recorder = null;
-    }
-
-    if (s.micStream) {
-      try { s.micStream.getTracks().forEach(t => t.stop()); } catch (e) {}
-      s.micStream = null;
-    }
-
-    if (ws && ws.readyState === 1) {
-      ws.onmessage = function (ev) {
-        let msg;
-        try {
-          msg = JSON.parse(ev.data);
-        } catch (e) {
-          return;
-        }
-
-        if (msg.type === "Turn" && msg.transcript) {
-          s.committedText = (s.committedText + " " + msg.transcript).trim();
-          setTextarea(s.committedText);
-        }
-
-        if (msg.type === "Termination") {
-          finalizeTranscript();
-        }
-      };
-
-      ws.onclose = null;
-
-      try {
-        ws.send(JSON.stringify({ type: "Terminate" }));
-      } catch (e) {}
-
-      s.finalizeTimer = setTimeout(finalizeTranscript, 1500);
-    } else {
-      finalizeTranscript();
-    }
-  }
-
-  function ensureButton() {
-    const w = getWrapper();
-    if (!w) return;
-
-    removeOldButton();
-
-    const ta = getTextarea();
-    if (ta) ta.style.paddingRight = "92px";
-    w.style.position = "relative";
-
-    const sendButton = w.querySelector('button[kind="icon"], button[data-testid="stChatInputSubmitButton"], button[aria-label="Send"]');
-    if (sendButton) {
-      sendButton.style.position = "absolute";
-      sendButton.style.right = "12px";
-      sendButton.style.bottom = "50%";
-      sendButton.style.transform = "translateY(50%)";
-      sendButton.style.zIndex = "10000";
-    }
-
-    const extraButtons = Array.from(w.querySelectorAll('button')).filter(function (button) {
-      return button.id !== BTN_ID && button !== sendButton && button.getAttribute("aria-label") !== "Send";
-    });
-    extraButtons.forEach(function (button) {
-      const label = (button.getAttribute("aria-label") || button.title || "").toLowerCase();
-      if (label.includes("attach") || label.includes("file") || label.includes("add")) {
-        button.style.display = "none";
-      }
-    });
-
-    const s = ensureState();
-
-    const btn = P.document.createElement("button");
-    btn.id = BTN_ID;
-    btn.type = "button";
-    btn.title = "Voice input";
-    btn.innerHTML = buildMicSvg(s.isRecording);
-
-    btn.style.position = "absolute";
-    btn.style.right = "48px";
-    btn.style.bottom = "50%";
-    btn.style.transform = "translateY(50%)";
-    btn.style.zIndex = "9999";
-    btn.style.background = "transparent";
-    btn.style.border = "none";
-    btn.style.cursor = "pointer";
-    btn.style.padding = "6px";
-    btn.style.borderRadius = "50%";
-    btn.style.lineHeight = "0";
-    btn.style.display = "flex";
-    btn.style.alignItems = "center";
-    btn.style.justifyContent = "center";
-    btn.style.transition = "background 0.2s";
-    btn.style.outline = "none";
-
-    if (s.isRecording) btn.classList.add("recording");
-
-    btn.addEventListener("mouseenter", function () {
-      if (!s.isRecording) btn.style.background = "rgba(168,85,247,0.12)";
-    });
-
-    btn.addEventListener("mouseleave", function () {
-      if (!s.isRecording) btn.style.background = "transparent";
-    });
-
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      if (s.isRecording) {
-        stopSession();
-      } else {
-        startSession();
-      }
-    });
-
-    w.appendChild(btn);
-  }
-
-  function boot() {
-    injectCss();
-
-    loadScriptIntoParent(
-      "https://www.WebRTC-Experiment.com/RecordRTC.js",
-      RECORDRTC_ID,
-      function () {
-        ensureState();
-
-        if (!P.__aaiMicEngine) {
-          P.__aaiMicEngine = {
-            ensureButton: ensureButton,
-            hardReset: hardReset
-          };
-
-          if (!P.__aaiMicObserver) {
-            P.__aaiMicObserver = new P.MutationObserver(function () {
-              const w = getWrapper();
-              if (w && !w.querySelector(`#${BTN_ID}`)) {
-                ensureButton();
-              }
-            });
-            P.__aaiMicObserver.observe(P.document.body, {
-              childList: true,
-              subtree: true
-            });
-          }
-        }
-
-        ensureButton();
-
-        setTimeout(ensureButton, 300);
-        setTimeout(ensureButton, 1200);
-        setTimeout(ensureButton, 2500);
-      }
-    );
-  }
-
-  boot();
-})();
-</script>
-""".replace("__TOKEN__", STREAMING_TOKEN)
-
-components.html(VOICE_HTML, height=0, scrolling=False)
+# Production disable: Voice/mic component hidden for student release.
+# Uncomment this block in the future to re-enable voice input.
+# VOICE_HTML = r"""
+# <script>
+# (function () {
+#   const P = window.parent;
+#   const TOKEN = "__TOKEN__";
+#   const WS_URL = "wss://streaming.assemblyai.com/v3/ws";
+#   const SAMPLE_RATE = 16000;
+#   const BTN_ID = "aai-mic-btn";
+#   const RECORDRTC_ID = "aai-recordrtc-script";
+#   const PULSE_STYLE_ID = "aai-pulse-css";
+#
+#   function getDoc() {
+#     return P.document;
+#   }
+#
+#   function loadScriptIntoParent(src, id, cb) {
+#     const pd = getDoc();
+#     if (!pd || !pd.head) return;
+#
+#     if (id && pd.getElementById(id)) {
+#       cb();
+#       return;
+#     }
+#
+#     const s = pd.createElement("script");
+#     if (id) s.id = id;
+#     s.src = src;
+#     s.onload = cb;
+#     s.onerror = () => console.error("Failed to load script:", src);
+#     pd.head.appendChild(s);
+#   }
+#
+#   function injectCss() {
+#     const pd = getDoc();
+#     if (!pd || pd.getElementById(PULSE_STYLE_ID)) return;
+#
+#     const style = pd.createElement("style");
+#     style.id = PULSE_STYLE_ID;
+#     style.textContent = `
+#       @keyframes aaiPulse {
+#         0%   { box-shadow: 0 0 0 0px rgba(168,85,247,0.7); }
+#         70%  { box-shadow: 0 0 0 10px rgba(168,85,247,0); }
+#         100% { box-shadow: 0 0 0 0px rgba(168,85,247,0); }
+#       }
+#       #${BTN_ID}.recording {
+#         animation: aaiPulse 1.2s ease-out infinite !important;
+#       }
+#     `;
+#     pd.head.appendChild(style);
+#   }
+#
+#   function getWrapper() {
+#     return P.document.querySelector('div[data-testid="stChatInput"]');
+#   }
+#
+#   function getTextarea() {
+#     const w = getWrapper();
+#     return w ? w.querySelector("textarea") : null;
+#   }
+#
+#   function setTextarea(text) {
+#     const ta = getTextarea();
+#     if (!ta) return;
+#
+#     const setter = Object.getOwnPropertyDescriptor(
+#       P.HTMLTextAreaElement.prototype,
+#       "value"
+#     ).set;
+#
+#     setter.call(ta, text);
+#     ta.dispatchEvent(new Event("input", { bubbles: true }));
+#     ta.focus();
+#   }
+#
+#   function buildMicSvg(active) {
+#     const stroke = active ? "#a855f7" : "#ffffff";
+#     return `
+#       <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+#         stroke="${stroke}" stroke-width="2.2"
+#         stroke-linecap="round" stroke-linejoin="round">
+#         <rect x="9" y="2" width="6" height="12" rx="3"></rect>
+#         <path d="M5 10a7 7 0 0 0 14 0"></path>
+#         <line x1="12" y1="19" x2="12" y2="22"></line>
+#         <line x1="8" y1="22" x2="16" y2="22"></line>
+#       </svg>
+#     `;
+#   }
+#
+#   function ensureState() {
+#     if (P.__aaiMicState) return P.__aaiMicState;
+#
+#     P.__aaiMicState = {
+#       socket: null,
+#       recorder: null,
+#       micStream: null,
+#       isRecording: false,
+#       committedText: "",
+#       partialText: "",
+#       finalizing: false,
+#       finalizeTimer: null,
+#       intentionalClose: false,
+#     };
+#
+#     return P.__aaiMicState;
+#   }
+#
+#   function setButtonVisual(active) {
+#     const btn = getButton();
+#     if (!btn) return;
+#
+#     btn.innerHTML = buildMicSvg(active);
+#
+#     if (active) {
+#       btn.classList.add("recording");
+#       btn.style.background = "rgba(168,85,247,0.18)";
+#     } else {
+#       btn.classList.remove("recording");
+#       btn.style.background = "transparent";
+#     }
+#   }
+#
+#   function getButton() {
+#     const w = getWrapper();
+#     return w ? w.querySelector(`#${BTN_ID}`) : null;
+#   }
+#
+#   function removeOldButton() {
+#     const old = P.document.getElementById(BTN_ID);
+#     if (old) old.remove();
+#   }
+#
+#   function silentCleanup() {
+#     const s = ensureState();
+#
+#     if (s.finalizeTimer) {
+#       clearTimeout(s.finalizeTimer);
+#       s.finalizeTimer = null;
+#     }
+#
+#     if (s.recorder) {
+#       try { s.recorder.stopRecording(); } catch (e) {}
+#       s.recorder = null;
+#     }
+#
+#     if (s.micStream) {
+#       try { s.micStream.getTracks().forEach(t => t.stop()); } catch (e) {}
+#       s.micStream = null;
+#     }
+#
+#     if (s.socket) {
+#       try {
+#         s.socket.onopen = null;
+#         s.socket.onmessage = null;
+#         s.socket.onerror = null;
+#         s.socket.onclose = null;
+#         s.socket.close();
+#       } catch (e) {}
+#       s.socket = null;
+#     }
+#   }
+#
+#   function hardReset() {
+#     const s = ensureState();
+#     silentCleanup();
+#     s.isRecording = false;
+#     s.committedText = "";
+#     s.partialText = "";
+#     s.finalizing = false;
+#     s.intentionalClose = false;
+#     setButtonVisual(false);
+#   }
+#
+#   function finalizeTranscript() {
+#     const s = ensureState();
+#     if (s.finalizing) return;
+#     s.finalizing = true;
+#
+#     if (s.finalizeTimer) {
+#       clearTimeout(s.finalizeTimer);
+#       s.finalizeTimer = null;
+#     }
+#
+#     if (s.socket) {
+#       try {
+#         s.socket.onopen = null;
+#         s.socket.onmessage = null;
+#         s.socket.onerror = null;
+#         s.socket.onclose = null;
+#         s.socket.close();
+#       } catch (e) {}
+#       s.socket = null;
+#     }
+#
+#     const finalText = (s.committedText || "").trim();
+#
+#     s.isRecording = false;
+#     s.committedText = "";
+#     s.partialText = "";
+#     s.finalizing = false;
+#     s.intentionalClose = false;
+#
+#     setButtonVisual(false);
+#
+#     if (finalText) setTextarea(finalText);
+#   }
+#
+#   function startSession() {
+#     const s = ensureState();
+#
+#     if (s.isRecording) return;
+#
+#     if (!TOKEN || TOKEN === "YOUR_ASSEMBLYAI_API_KEY_HERE") {
+#       alert("AssemblyAI streaming token is missing.");
+#       return;
+#     }
+#
+#     hardReset();
+#     s.isRecording = true;
+#     setButtonVisual(true);
+#
+#     let ws;
+#     try {
+#       ws = new P.WebSocket(
+#         WS_URL +
+#           "?sample_rate=" + SAMPLE_RATE +
+#           "&encoding=pcm_s16le" +
+#           "&token=" + encodeURIComponent(TOKEN)
+#       );
+#     } catch (e) {
+#       alert("WebSocket could not be created: " + e.message);
+#       hardReset();
+#       return;
+#     }
+#
+#     s.socket = ws;
+#
+#     ws.onopen = async function () {
+#       if (s.socket !== ws) {
+#         try { ws.close(); } catch (e) {}
+#         return;
+#       }
+#
+#       try {
+#         const stream = await P.navigator.mediaDevices.getUserMedia({ audio: true });
+#         if (s.socket !== ws) {
+#           stream.getTracks().forEach(t => t.stop());
+#           return;
+#         }
+#
+#         s.micStream = stream;
+#
+#         if (!P.RecordRTC || !P.StereoAudioRecorder) {
+#           alert("RecordRTC did not load correctly.");
+#           hardReset();
+#           return;
+#         }
+#
+#         s.recorder = new P.RecordRTC(stream, {
+#           type: "audio",
+#           mimeType: "audio/webm;codecs=pcm",
+#           recorderType: P.StereoAudioRecorder,
+#           desiredSampRate: SAMPLE_RATE,
+#           numberOfAudioChannels: 1,
+#           bufferSize: 4096,
+#           timeSlice: 250,
+#           ondataavailable: function (blob) {
+#             if (s.socket === ws && ws.readyState === 1) {
+#               blob.arrayBuffer().then(function (buf) {
+#                 if (s.socket === ws && ws.readyState === 1) {
+#                   ws.send(buf);
+#                 }
+#               });
+#             }
+#           }
+#         });
+#
+#         s.recorder.startRecording();
+#       } catch (err) {
+#         alert("Microphone access denied: " + err.message);
+#         hardReset();
+#       }
+#     };
+#
+#     ws.onmessage = function (ev) {
+#       if (s.socket !== ws) return;
+#
+#       let msg;
+#       try {
+#         msg = JSON.parse(ev.data);
+#       } catch (e) {
+#         return;
+#       }
+#
+#       if (msg.type === "Turn") {
+#         s.partialText = msg.transcript || "";
+#         const live = (s.committedText + " " + s.partialText).trim();
+#         if (live) setTextarea(live);
+#
+#         if (msg.end_of_turn) {
+#           s.committedText = live;
+#           s.partialText = "";
+#         }
+#       }
+#     };
+#
+#     ws.onerror = function () {
+#       if (s.socket === ws) hardReset();
+#     };
+#
+#     ws.onclose = function () {
+#       if (s.socket === ws && s.isRecording && !s.intentionalClose) {
+#         hardReset();
+#       }
+#     };
+#   }
+#
+#   function stopSession() {
+#     const s = ensureState();
+#     if (!s.isRecording) return;
+#
+#     const ws = s.socket;
+#     s.isRecording = false;
+#     s.intentionalClose = true;
+#     setButtonVisual(false);
+#
+#     if (s.recorder) {
+#       try { s.recorder.stopRecording(); } catch (e) {}
+#       s.recorder = null;
+#     }
+#
+#     if (s.micStream) {
+#       try { s.micStream.getTracks().forEach(t => t.stop()); } catch (e) {}
+#       s.micStream = null;
+#     }
+#
+#     if (ws && ws.readyState === 1) {
+#       ws.onmessage = function (ev) {
+#         let msg;
+#         try {
+#           msg = JSON.parse(ev.data);
+#         } catch (e) {
+#           return;
+#         }
+#
+#         if (msg.type === "Turn" && msg.transcript) {
+#           s.committedText = (s.committedText + " " + msg.transcript).trim();
+#           setTextarea(s.committedText);
+#         }
+#
+#         if (msg.type === "Termination") {
+#           finalizeTranscript();
+#         }
+#       };
+#
+#       ws.onclose = null;
+#
+#       try {
+#         ws.send(JSON.stringify({ type: "Terminate" }));
+#       } catch (e) {}
+#
+#       s.finalizeTimer = setTimeout(finalizeTranscript, 1500);
+#     } else {
+#       finalizeTranscript();
+#     }
+#   }
+#
+#   function ensureButton() {
+#     const w = getWrapper();
+#     if (!w) return;
+#
+#     removeOldButton();
+#
+#     const ta = getTextarea();
+#     if (ta) ta.style.paddingRight = "92px";
+#     w.style.position = "relative";
+#
+#     const sendButton = w.querySelector('button[kind="icon"], button[data-testid="stChatInputSubmitButton"], button[aria-label="Send"]');
+#     if (sendButton) {
+#       sendButton.style.position = "absolute";
+#       sendButton.style.right = "12px";
+#       sendButton.style.bottom = "50%";
+#       sendButton.style.transform = "translateY(50%)";
+#       sendButton.style.zIndex = "10000";
+#     }
+#
+#     const extraButtons = Array.from(w.querySelectorAll('button')).filter(function (button) {
+#       return button.id !== BTN_ID && button !== sendButton && button.getAttribute("aria-label") !== "Send";
+#     });
+#     extraButtons.forEach(function (button) {
+#       const label = (button.getAttribute("aria-label") || button.title || "").toLowerCase();
+#       if (label.includes("attach") || label.includes("file") || label.includes("add")) {
+#         button.style.display = "none";
+#       }
+#     });
+#
+#     const s = ensureState();
+#
+#     const btn = P.document.createElement("button");
+#     btn.id = BTN_ID;
+#     btn.type = "button";
+#     btn.title = "Voice input";
+#     btn.innerHTML = buildMicSvg(s.isRecording);
+#
+#     btn.style.position = "absolute";
+#     btn.style.right = "48px";
+#     btn.style.bottom = "50%";
+#     btn.style.transform = "translateY(50%)";
+#     btn.style.zIndex = "9999";
+#     btn.style.background = "transparent";
+#     btn.style.border = "none";
+#     btn.style.cursor = "pointer";
+#     btn.style.padding = "6px";
+#     btn.style.borderRadius = "50%";
+#     btn.style.lineHeight = "0";
+#     btn.style.display = "flex";
+#     btn.style.alignItems = "center";
+#     btn.style.justifyContent = "center";
+#     btn.style.transition = "background 0.2s";
+#     btn.style.outline = "none";
+#
+#     if (s.isRecording) btn.classList.add("recording");
+#
+#     btn.addEventListener("mouseenter", function () {
+#       if (!s.isRecording) btn.style.background = "rgba(168,85,247,0.12)";
+#     });
+#
+#     btn.addEventListener("mouseleave", function () {
+#       if (!s.isRecording) btn.style.background = "transparent";
+#     });
+#
+#     btn.addEventListener("click", function (e) {
+#       e.preventDefault();
+#       e.stopPropagation();
+#
+#       if (s.isRecording) {
+#         stopSession();
+#       } else {
+#         startSession();
+#       }
+#     });
+#
+#     w.appendChild(btn);
+#   }
+#
+#   function boot() {
+#     injectCss();
+#
+#     loadScriptIntoParent(
+#       "https://www.WebRTC-Experiment.com/RecordRTC.js",
+#       RECORDRTC_ID,
+#       function () {
+#         ensureState();
+#
+#         if (!P.__aaiMicEngine) {
+#           P.__aaiMicEngine = {
+#             ensureButton: ensureButton,
+#             hardReset: hardReset
+#           };
+#
+#           if (!P.__aaiMicObserver) {
+#             P.__aaiMicObserver = new P.MutationObserver(function () {
+#               const w = getWrapper();
+#               if (w && !w.querySelector(`#${BTN_ID}`)) {
+#                 ensureButton();
+#               }
+#             });
+#             P.__aaiMicObserver.observe(P.document.body, {
+#               childList: true,
+#               subtree: true
+#             });
+#           }
+#         }
+#
+#         ensureButton();
+#
+#         setTimeout(ensureButton, 300);
+#         setTimeout(ensureButton, 1200);
+#         setTimeout(ensureButton, 2500);
+#       }
+#     );
+#   }
+#
+#   boot();
+# })();
+# </script>
+# """.replace("__TOKEN__", STREAMING_TOKEN)
+#
+# components.html(VOICE_HTML, height=0, scrolling=False)
